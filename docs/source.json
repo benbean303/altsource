@@ -6,7 +6,88 @@
   "iconURL": "https://benbean303.github.io/altsource/admin/icon-512.png",
   "website": "https://benbean303.github.io/altsource/",
   "tintColor": "#5B6CFF",
-  "featuredApps": [],
-  "apps": [],
+  "featuredApps": [
+    "com.theboisclub.gen1recompplusplus"
+  ],
+  "apps": [
+    {
+      "name": "gen1recomp++",
+      "bundleIdentifier": "com.theboisclub.gen1recompplusplus",
+      "developerName": "bryanthaboi",
+      "subtitle": "Gen1Recomp - A native Lua / LÖVE2D recreation of Gen 1, 2, and 3 Poke",
+      "localizedDescription": "Gen1Recomp - A native Lua / LÖVE2D recreation of Gen 1, 2, and 3 Poke\n\nSource: https://github.com/bryanthaboi/gen1recomp",
+      "iconURL": "https://benbean303.github.io/altsource/icons/com.theboisclub.gen1recompplusplus.png",
+      "tintColor": "#FAC910",
+      "category": "other",
+      "screenshots": [],
+      "versions": [
+        {
+          "version": "0.3.97",
+          "buildVersion": "397",
+          "date": "2026-10-26T16:42:12Z",
+          "localizedDescription": "… CLOSES #3059, CLOSES #3061, CLOSES #3062\n\nIssues closed\n\n- #3048 emerald data gets imported twice on portable installation\n- #3049 (Modding API v3) battleScaleBack causes error in gen2 games\n- #3055 mod.datasets:open(\"crystal\") rejects Crystal's pokemon data over its tutorMoves table\n- #3057 Mod update fails with \"string length overflow\" when baseroms/ holds a ~2 GiB import\n- #3058 mod.datasets: Gen 2's fishing art (menu_gfx emotes) can't be reached\n- #3059 Oak music in Gold starts too early\n- #3061 CD icons for Dark TMs in the TM Case are invisible.\n- #3062 Event Pokemon are missing the \"Fateful Encounter\" flag\n\nContributors\n\n- @bryanthaboi",
+          "downloadURL": "https://github.com/bryanthaboi/gen1recomp/releases/download/v0.3.97/gen1recomp%2B%2B-0.3.97-ios.ipa",
+          "size": 44714538,
+          "sha256": "13d834471d01016e3297efe3ce81dd3bad97bbea26259e6ffd795ac12c5b52ba",
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "0.3.96",
+          "buildVersion": "396",
+          "date": "2026-10-23T21:49:15Z",
+          "localizedDescription": "honestly RIP zaboomafoo we will never forget u\n\nIssues closed\n\n- #3036 Gen2: a mod can't add a phone contact\n- #3037 Mods can't change Gen2 shops (no registry for data.gen2Marts)\n- #3038 Gen 2: new species and items get no script number (index capped at 255, never assigned)\n- #3040 FRLG: Hoenn species + Celebi play the wrong cries\n- #3042 Goldenrod game corner card game bugs\n- #3043 Emerald Isn't Available on Switch\n- #3046 (Modding API) mod.options:define doesn't work anymore\n\nContributors\n\n- @bryanthaboi\n- @Nexhas28\n- @poooooby",
+          "downloadURL": "https://github.com/bryanthaboi/gen1recomp/releases/download/v0.3.96/gen1recomp%2B%2B-0.3.96-ios.ipa",
+          "size": 44711034,
+          "sha256": "3e76461bdc45bf210025e6a91d4326e479b765eb24a0389f3677f275334deb54",
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "0.3.95",
+          "buildVersion": "395",
+          "date": "2026-10-21T02:42:51Z",
+          "localizedDescription": "Mod Mon index cap 🧢\n\nContributors\n\n- @bryanthaboi",
+          "downloadURL": "https://github.com/bryanthaboi/gen1recomp/releases/download/v0.3.95/gen1recomp%2B%2B-0.3.95-ios.ipa",
+          "size": 44713427,
+          "sha256": "606eb4f1c8ecbaa41ab2da37a84ccca8cdb0aaae7067c913d5f59c4dcd829244",
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "0.3.94",
+          "buildVersion": "394",
+          "date": "2026-10-21T00:45:19Z",
+          "localizedDescription": "Shiny api gen 3\n\nContributors\n\n- @bryanthaboi",
+          "downloadURL": "https://github.com/bryanthaboi/gen1recomp/releases/download/v0.3.94/gen1recomp%2B%2B-0.3.94-ios.ipa",
+          "size": 44708049,
+          "sha256": "75497c710e146443ea63cf47471910932e1ce617d4016bafdf38701034c461ad",
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "0.3.93",
+          "buildVersion": "393",
+          "date": "2026-10-20T21:29:38Z",
+          "localizedDescription": "major mod api update\n\nCo-authored-by: Nexhas28 <45065431+Nexhas28@users.noreply.github.com>\n\nContributors\n\n- @bryanthaboi\n- @Nexhas28",
+          "downloadURL": "https://github.com/bryanthaboi/gen1recomp/releases/download/v0.3.93/gen1recomp%2B%2B-0.3.93-ios.ipa",
+          "size": 44712138,
+          "sha256": "a795071d8b0c01bce1cac3cdf60824808a8fd989e51207c4d986c088c1210b31",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.healthkit",
+          "get-task-allow"
+        ],
+        "privacy": {
+          "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
+        }
+      },
+      "version": "0.3.97",
+      "versionDate": "2026-10-26T16:42:12Z",
+      "versionDescription": "… CLOSES #3059, CLOSES #3061, CLOSES #3062\n\nIssues closed\n\n- #3048 emerald data gets imported twice on portable installation\n- #3049 (Modding API v3) battleScaleBack causes error in gen2 games\n- #3055 mod.datasets:open(\"crystal\") rejects Crystal's pokemon data over its tutorMoves table\n- #3057 Mod update fails with \"string length overflow\" when baseroms/ holds a ~2 GiB import\n- #3058 mod.datasets: Gen 2's fishing art (menu_gfx emotes) can't be reached\n- #3059 Oak music in Gold starts too early\n- #3061 CD icons for Dark TMs in the TM Case are invisible.\n- #3062 Event Pokemon are missing the \"Fateful Encounter\" flag\n\nContributors\n\n- @bryanthaboi",
+      "downloadURL": "https://github.com/bryanthaboi/gen1recomp/releases/download/v0.3.97/gen1recomp%2B%2B-0.3.97-ios.ipa",
+      "size": 44714538,
+      "_repo": "bryanthaboi/gen1recomp"
+    }
+  ],
   "news": []
 }
