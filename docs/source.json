@@ -1,0 +1,12 @@
+{
+  "name": "My AltStore Source",
+  "identifier": "io.github.benbean303.altsource",
+  "subtitle": "Apps from GitHub releases",
+  "description": "Apps tracked automatically from GitHub releases.",
+  "iconURL": "https://benbean303.github.io/altsource/admin/icon-512.png",
+  "website": "https://benbean303.github.io/altsource/",
+  "tintColor": "#5B6CFF",
+  "featuredApps": [],
+  "apps": [],
+  "news": []
+}
