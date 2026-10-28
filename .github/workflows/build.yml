@@ -1,0 +1,69 @@
+name: Build source
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - config/**
+      - scripts/**
+      - .github/workflows/build.yml
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+    inputs:
+      app:
+        description: "owner/repo to refresh (blank = all)"
+        required: false
+        default: ""
+      force:
+        description: "Re-download .ipa files even if cached"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-source
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate source.json
+        run: python scripts/generate.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ONLY_APP: ${{ inputs.app }}
+          FORCE: ${{ inputs.force }}
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs state
+          if git diff --cached --quiet; then
+            # GitHub pauses scheduled workflows after 60 days without commits.
+            last=$(git log -1 --format=%ct)
+            if [ $(( $(date +%s) - last )) -gt $(( 45 * 86400 )) ]; then
+              git commit --allow-empty -m "Keep scheduled builds alive"
+            else
+              echo "No changes"
+              exit 0
+            fi
+          else
+            git commit -m "Update source"
+          fi
+          for attempt in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep 5
+          done
+          exit 1

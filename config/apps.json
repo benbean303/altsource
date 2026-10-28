@@ -1,0 +1,8 @@
+{
+  "source": {
+    "name": "My AltStore Source",
+    "subtitle": "Apps from GitHub releases",
+    "tintColor": "#5B6CFF"
+  },
+  "apps": []
+}
