@@ -493,7 +493,10 @@ def main():
     }
 
     write_json(SOURCE, source)
-    write_json(STATUS, {"sourceURL": f"{base_url}source.json", "apps": statuses})
+    # `sourceURL` is the address to add in the store app: the Cloudflare
+    # Worker (no caching) once configured, otherwise GitHub Pages directly.
+    source_url = source_cfg.get("sourceURL") or f"{base_url}source.json"
+    write_json(STATUS, {"sourceURL": source_url, "apps": statuses})
 
     # Prune cache entries and icons that nothing references any more.
     for k in [k for k, m in cache.items() if not m.pop("_used", False)]:

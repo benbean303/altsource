@@ -110,6 +110,27 @@ iOS doesn't let web apps appear in the share sheet, but a Shortcut can:
 
 Now on any GitHub repo page in Safari: Share → Add to My Source.
 
+### 8. Serve the source without caching (Cloudflare Worker)
+
+GitHub Pages always tells apps they may cache files for 10 minutes, and
+FlareStore keeps old copies of a source much longer than that, even after you
+remove and re-add it. `cloudflare/worker.js` fixes this. It serves the current
+`source.json` on every request with headers telling apps not to store it, and
+logs each request so you can see when FlareStore re-downloads.
+
+1. Sign up at [dash.cloudflare.com](https://dash.cloudflare.com/sign-up) (free).
+2. **Workers & Pages → Create → Create Worker**, name it `altsource`,
+   **Deploy**.
+3. **Edit code**, replace everything with `cloudflare/worker.js`, **Deploy**.
+4. Your source URL is now
+   `https://altsource.<your-subdomain>.workers.dev/source.json`.
+5. In the web app → Settings → **Source URL to share**, paste that URL and
+   save, so the copy/open buttons use it.
+6. In FlareStore, remove the old source and add the Worker URL.
+
+To see FlareStore's requests: Cloudflare dashboard → `altsource` Worker →
+**Logs** → Begin log stream, then refresh the source in FlareStore.
+
 ## Using it
 
 - **Add:** paste one or more GitHub links (repo, releases page, tag, or a

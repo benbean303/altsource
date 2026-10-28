@@ -708,6 +708,7 @@ function settingsScreen() {
     subtitle: h("input", { value: s.subtitle || "" }),
     iconURL: h("input", { value: s.iconURL || "", placeholder: "Default icon", inputmode: "url", autocapitalize: "off" }),
     tintColor: h("input", { value: s.tintColor || "", placeholder: "#5B6CFF", autocapitalize: "off" }),
+    sourceURL: h("input", { value: s.sourceURL || "", placeholder: "GitHub Pages source.json", inputmode: "url", autocapitalize: "off" }),
   };
 
   async function saveSource(button) {
@@ -773,6 +774,7 @@ function settingsScreen() {
           h("label", {}, "Subtitle", fields.subtitle),
           h("label", {}, "Icon URL", fields.iconURL),
           h("label", {}, "Tint color", fields.tintColor),
+          h("label", {}, "Source URL to share (e.g. your Cloudflare Worker)", fields.sourceURL),
           state.source?.identifier ? h("div", { class: "sub" }, "Identifier (never changes): ", h("span", { class: "mono" }, state.source.identifier)) : null,
           h("button", { class: "primary", onClick: (e) => saveSource(e.currentTarget) }, "Save")
         )

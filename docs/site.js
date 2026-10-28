@@ -1,4 +1,7 @@
-const url = new URL("source.json", location.href).href;
+const status = await fetch("status.json", { cache: "no-cache" })
+  .then((r) => (r.ok ? r.json() : {}))
+  .catch(() => ({}));
+const url = status.sourceURL || new URL("source.json", location.href).href;
 document.getElementById("url").textContent = url;
 document.getElementById("altstore").href = `altstore://source?url=${encodeURIComponent(url)}`;
 document.getElementById("sidestore").href = `sidestore://source?url=${encodeURIComponent(url)}`;
