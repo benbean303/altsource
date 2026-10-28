@@ -10,6 +10,8 @@
       "latestTag": "v0.3.97",
       "iconURL": "https://benbean303.github.io/altsource/icons/com.theboisclub.gen1recompplusplus.png",
       "versions": 5,
+      "sdkVersion": "26.2",
+      "duo": "patched",
       "state": "ok",
       "messages": []
     }

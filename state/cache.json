@@ -5,6 +5,7 @@
     "version": "0.3.93",
     "buildVersion": "393",
     "minOSVersion": "15.0",
+    "sdkVersion": "26.2",
     "entitlements": [
       "com.apple.developer.healthkit",
       "get-task-allow"
@@ -13,7 +14,13 @@
       "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
     },
     "sha256": "a795071d8b0c01bce1cac3cdf60824808a8fd989e51207c4d986c088c1210b31",
-    "hasIcon": true
+    "hasIcon": true,
+    "duo": {
+      "tag": "duo-com.theboisclub.gen1recompplusplus-0.3.93-393",
+      "url": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.93-393/gen1recomp%2B%2B-0.3.93-ios-duo.ipa",
+      "size": 44711756,
+      "sha256": "54764b6a13846bbe7790735f8c6b6509ef46221940961a1f6dbedccf13faf42f"
+    }
   },
   "660924512:44708049:2026-10-21T00:45:15Z": {
     "bundleIdentifier": "com.theboisclub.gen1recompplusplus",
@@ -21,6 +28,7 @@
     "version": "0.3.94",
     "buildVersion": "394",
     "minOSVersion": "15.0",
+    "sdkVersion": "26.2",
     "entitlements": [
       "com.apple.developer.healthkit",
       "get-task-allow"
@@ -29,7 +37,13 @@
       "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
     },
     "sha256": "75497c710e146443ea63cf47471910932e1ce617d4016bafdf38701034c461ad",
-    "hasIcon": true
+    "hasIcon": true,
+    "duo": {
+      "tag": "duo-com.theboisclub.gen1recompplusplus-0.3.94-394",
+      "url": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.94-394/gen1recomp%2B%2B-0.3.94-ios-duo.ipa",
+      "size": 44707769,
+      "sha256": "f3e9c84ef61394e0918c6b118949680d92302c79ba073a5955acaacea926f203"
+    }
   },
   "661145645:44713427:2026-10-21T02:42:48Z": {
     "bundleIdentifier": "com.theboisclub.gen1recompplusplus",
@@ -37,6 +51,7 @@
     "version": "0.3.95",
     "buildVersion": "395",
     "minOSVersion": "15.0",
+    "sdkVersion": "26.2",
     "entitlements": [
       "com.apple.developer.healthkit",
       "get-task-allow"
@@ -45,7 +60,13 @@
       "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
     },
     "sha256": "606eb4f1c8ecbaa41ab2da37a84ccca8cdb0aaae7067c913d5f59c4dcd829244",
-    "hasIcon": true
+    "hasIcon": true,
+    "duo": {
+      "tag": "duo-com.theboisclub.gen1recompplusplus-0.3.95-395",
+      "url": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.95-395/gen1recomp%2B%2B-0.3.95-ios-duo.ipa",
+      "size": 44712394,
+      "sha256": "3b29c1ff3d82397fa33e3833248a497bbf91b71c6ab037279882b10ab93e9f1c"
+    }
   },
   "670507365:44711034:2026-10-23T21:49:12Z": {
     "bundleIdentifier": "com.theboisclub.gen1recompplusplus",
@@ -53,6 +74,7 @@
     "version": "0.3.96",
     "buildVersion": "396",
     "minOSVersion": "15.0",
+    "sdkVersion": "26.2",
     "entitlements": [
       "com.apple.developer.healthkit",
       "get-task-allow"
@@ -61,7 +83,13 @@
       "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
     },
     "sha256": "3e76461bdc45bf210025e6a91d4326e479b765eb24a0389f3677f275334deb54",
-    "hasIcon": true
+    "hasIcon": true,
+    "duo": {
+      "tag": "duo-com.theboisclub.gen1recompplusplus-0.3.96-396",
+      "url": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.96-396/gen1recomp%2B%2B-0.3.96-ios-duo.ipa",
+      "size": 44710740,
+      "sha256": "cc73b61241075be217089f70804a5aa5d2dd2a88e824133a850385fd41fc761f"
+    }
   },
   "678789636:44714538:2026-10-26T16:42:08Z": {
     "bundleIdentifier": "com.theboisclub.gen1recompplusplus",
@@ -69,6 +97,7 @@
     "version": "0.3.97",
     "buildVersion": "397",
     "minOSVersion": "15.0",
+    "sdkVersion": "26.2",
     "entitlements": [
       "com.apple.developer.healthkit",
       "get-task-allow"
@@ -77,6 +106,12 @@
       "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
     },
     "sha256": "13d834471d01016e3297efe3ce81dd3bad97bbea26259e6ffd795ac12c5b52ba",
-    "hasIcon": true
+    "hasIcon": true,
+    "duo": {
+      "tag": "duo-com.theboisclub.gen1recompplusplus-0.3.97-397",
+      "url": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.97-397/gen1recomp%2B%2B-0.3.97-ios-duo.ipa",
+      "size": 44713228,
+      "sha256": "18c72024bcfa2d3f92518fb6a40e9cf8a3353307c48501d03254dc9595941f90"
+    }
   }
 }

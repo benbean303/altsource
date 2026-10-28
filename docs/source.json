@@ -26,9 +26,9 @@
           "buildVersion": "397",
           "date": "2026-10-26T16:42:12Z",
           "localizedDescription": "… CLOSES #3059, CLOSES #3061, CLOSES #3062\n\nIssues closed\n\n- #3048 emerald data gets imported twice on portable installation\n- #3049 (Modding API v3) battleScaleBack causes error in gen2 games\n- #3055 mod.datasets:open(\"crystal\") rejects Crystal's pokemon data over its tutorMoves table\n- #3057 Mod update fails with \"string length overflow\" when baseroms/ holds a ~2 GiB import\n- #3058 mod.datasets: Gen 2's fishing art (menu_gfx emotes) can't be reached\n- #3059 Oak music in Gold starts too early\n- #3061 CD icons for Dark TMs in the TM Case are invisible.\n- #3062 Event Pokemon are missing the \"Fateful Encounter\" flag\n\nContributors\n\n- @bryanthaboi",
-          "downloadURL": "https://github.com/bryanthaboi/gen1recomp/releases/download/v0.3.97/gen1recomp%2B%2B-0.3.97-ios.ipa",
-          "size": 44714538,
-          "sha256": "13d834471d01016e3297efe3ce81dd3bad97bbea26259e6ffd795ac12c5b52ba",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.97-397/gen1recomp%2B%2B-0.3.97-ios-duo.ipa",
+          "size": 44713228,
+          "sha256": "18c72024bcfa2d3f92518fb6a40e9cf8a3353307c48501d03254dc9595941f90",
           "minOSVersion": "15.0"
         },
         {
@@ -36,9 +36,9 @@
           "buildVersion": "396",
           "date": "2026-10-23T21:49:15Z",
           "localizedDescription": "honestly RIP zaboomafoo we will never forget u\n\nIssues closed\n\n- #3036 Gen2: a mod can't add a phone contact\n- #3037 Mods can't change Gen2 shops (no registry for data.gen2Marts)\n- #3038 Gen 2: new species and items get no script number (index capped at 255, never assigned)\n- #3040 FRLG: Hoenn species + Celebi play the wrong cries\n- #3042 Goldenrod game corner card game bugs\n- #3043 Emerald Isn't Available on Switch\n- #3046 (Modding API) mod.options:define doesn't work anymore\n\nContributors\n\n- @bryanthaboi\n- @Nexhas28\n- @poooooby",
-          "downloadURL": "https://github.com/bryanthaboi/gen1recomp/releases/download/v0.3.96/gen1recomp%2B%2B-0.3.96-ios.ipa",
-          "size": 44711034,
-          "sha256": "3e76461bdc45bf210025e6a91d4326e479b765eb24a0389f3677f275334deb54",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.96-396/gen1recomp%2B%2B-0.3.96-ios-duo.ipa",
+          "size": 44710740,
+          "sha256": "cc73b61241075be217089f70804a5aa5d2dd2a88e824133a850385fd41fc761f",
           "minOSVersion": "15.0"
         },
         {
@@ -46,9 +46,9 @@
           "buildVersion": "395",
           "date": "2026-10-21T02:42:51Z",
           "localizedDescription": "Mod Mon index cap 🧢\n\nContributors\n\n- @bryanthaboi",
-          "downloadURL": "https://github.com/bryanthaboi/gen1recomp/releases/download/v0.3.95/gen1recomp%2B%2B-0.3.95-ios.ipa",
-          "size": 44713427,
-          "sha256": "606eb4f1c8ecbaa41ab2da37a84ccca8cdb0aaae7067c913d5f59c4dcd829244",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.95-395/gen1recomp%2B%2B-0.3.95-ios-duo.ipa",
+          "size": 44712394,
+          "sha256": "3b29c1ff3d82397fa33e3833248a497bbf91b71c6ab037279882b10ab93e9f1c",
           "minOSVersion": "15.0"
         },
         {
@@ -56,9 +56,9 @@
           "buildVersion": "394",
           "date": "2026-10-21T00:45:19Z",
           "localizedDescription": "Shiny api gen 3\n\nContributors\n\n- @bryanthaboi",
-          "downloadURL": "https://github.com/bryanthaboi/gen1recomp/releases/download/v0.3.94/gen1recomp%2B%2B-0.3.94-ios.ipa",
-          "size": 44708049,
-          "sha256": "75497c710e146443ea63cf47471910932e1ce617d4016bafdf38701034c461ad",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.94-394/gen1recomp%2B%2B-0.3.94-ios-duo.ipa",
+          "size": 44707769,
+          "sha256": "f3e9c84ef61394e0918c6b118949680d92302c79ba073a5955acaacea926f203",
           "minOSVersion": "15.0"
         },
         {
@@ -66,9 +66,9 @@
           "buildVersion": "393",
           "date": "2026-10-20T21:29:38Z",
           "localizedDescription": "major mod api update\n\nCo-authored-by: Nexhas28 <45065431+Nexhas28@users.noreply.github.com>\n\nContributors\n\n- @bryanthaboi\n- @Nexhas28",
-          "downloadURL": "https://github.com/bryanthaboi/gen1recomp/releases/download/v0.3.93/gen1recomp%2B%2B-0.3.93-ios.ipa",
-          "size": 44712138,
-          "sha256": "a795071d8b0c01bce1cac3cdf60824808a8fd989e51207c4d986c088c1210b31",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.93-393/gen1recomp%2B%2B-0.3.93-ios-duo.ipa",
+          "size": 44711756,
+          "sha256": "54764b6a13846bbe7790735f8c6b6509ef46221940961a1f6dbedccf13faf42f",
           "minOSVersion": "15.0"
         }
       ],
@@ -84,8 +84,8 @@
       "version": "0.3.97",
       "versionDate": "2026-10-26T16:42:12Z",
       "versionDescription": "… CLOSES #3059, CLOSES #3061, CLOSES #3062\n\nIssues closed\n\n- #3048 emerald data gets imported twice on portable installation\n- #3049 (Modding API v3) battleScaleBack causes error in gen2 games\n- #3055 mod.datasets:open(\"crystal\") rejects Crystal's pokemon data over its tutorMoves table\n- #3057 Mod update fails with \"string length overflow\" when baseroms/ holds a ~2 GiB import\n- #3058 mod.datasets: Gen 2's fishing art (menu_gfx emotes) can't be reached\n- #3059 Oak music in Gold starts too early\n- #3061 CD icons for Dark TMs in the TM Case are invisible.\n- #3062 Event Pokemon are missing the \"Fateful Encounter\" flag\n\nContributors\n\n- @bryanthaboi",
-      "downloadURL": "https://github.com/bryanthaboi/gen1recomp/releases/download/v0.3.97/gen1recomp%2B%2B-0.3.97-ios.ipa",
-      "size": 44714538,
+      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.97-397/gen1recomp%2B%2B-0.3.97-ios-duo.ipa",
+      "size": 44713228,
       "_repo": "bryanthaboi/gen1recomp"
     }
   ],
