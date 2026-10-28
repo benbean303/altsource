@@ -105,6 +105,8 @@ section h2 {
 .title.small { font-size: 14px; }
 .sub { color: var(--muted); font-size: 14px; overflow-wrap: anywhere; }
 .chev { color: var(--muted); font-size: 22px; }
+.duo.ok { color: var(--ok); }
+.duo.warn { color: var(--warn); }
 .mono { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13px; }
 .break { word-break: break-all; }
 

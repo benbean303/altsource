@@ -152,6 +152,33 @@ Now on any GitHub repo page in Safari: Share → Add to My Source.
 If an app fails (repo deleted, network error, bad `.ipa`), the source keeps
 serving that app's last good entry and the web app shows the error.
 
+### iPhone Duo patch
+
+iPhone Duo only lets apps fill its inner display if they were built with the
+iOS 27.1 SDK or newer. Older builds are letterboxed. The SDK version is
+recorded in the app's binary (`LC_BUILD_VERSION`), so instead of rebuilding
+from source, `scripts/duo.py`:
+
+1. reads the SDK version of every release (`sdkVersion` in `status.json`)
+2. if it's older than 27.1, raises the SDK version in the main app and its
+   extensions to 27.1, and updates `DTSDKName` / `DTPlatformVersion` in
+   `Info.plist`
+3. uploads the patched file as a release in this repo (tag
+   `duo-<bundle id>-<version>-<build>`, file `<name>-duo.ipa`) and points the
+   source at it
+
+Patching breaks the original code signature. That doesn't matter, because
+AltStore, SideStore and FlareStore re-sign apps before installing them.
+Apps built with a new enough SDK are served unchanged.
+
+It's on by default. Turn it off per app in the web app (app → iPhone Duo →
+Use the original release) or with `"duoPatch": "off"` in `config/apps.json`.
+Duo releases that nothing uses any more are deleted automatically.
+
+Patched apps fill the screen only as well as their layout can stretch. Apps
+with fixed-size screens may look stretched or misplaced, and rebuilding
+unchanged source code with the newer SDK would look the same.
+
 ### Files
 
 | Path | What |

@@ -40,6 +40,9 @@ def read_ipa(path):
         if not bundle_id:
             raise IPAError("Info.plist has no CFBundleIdentifier")
 
+        main_exe = info.get("CFBundleExecutable")
+        sdk = sdk_version(zf.read(f"{app_dir}{main_exe}")) if main_exe and f"{app_dir}{main_exe}" in names else None
+
         entitlements = set()
         privacy = {}
         for bundle_dir in [app_dir] + _extension_dirs(names, app_dir):
@@ -59,6 +62,7 @@ def read_ipa(path):
             "version": str(info.get("CFBundleShortVersionString") or info.get("CFBundleVersion") or "0"),
             "buildVersion": str(info.get("CFBundleVersion") or info.get("CFBundleShortVersionString") or "0"),
             "minOSVersion": info.get("MinimumOSVersion"),
+            "sdkVersion": sdk,
             "entitlements": sorted(entitlements - IMPLICIT_ENTITLEMENTS),
             "privacy": dict(sorted(privacy.items())),
             "icon": _icon_png(zf, names, app_dir, info),
@@ -93,11 +97,74 @@ def _load_plist(zf, name, optional=False):
         raise IPAError(f"could not read {name}: {e}")
 
 
-# --- Mach-O code signature -------------------------------------------------
+# --- Mach-O ----------------------------------------------------------------
 
 FAT_MAGIC = 0xCAFEBABE
 FAT_MAGIC_64 = 0xCAFEBABF
 LC_CODE_SIGNATURE = 0x1D
+LC_VERSION_MIN_IPHONEOS = 0x25
+LC_BUILD_VERSION = 0x32
+PLATFORM_IOS = 2
+
+
+def slice_offsets(binary):
+    """(offset, size) of each architecture slice in a possibly-fat Mach-O."""
+    magic = struct.unpack_from(">I", binary, 0)[0]
+    if magic not in (FAT_MAGIC, FAT_MAGIC_64):
+        return [(0, len(binary))]
+    count = struct.unpack_from(">I", binary, 4)[0]
+    out, offset = [], 8
+    for _ in range(min(count, 16)):
+        if magic == FAT_MAGIC:
+            _, _, start, size, _ = struct.unpack_from(">5I", binary, offset)
+            offset += 20
+        else:
+            _, _, start, size, _, _ = struct.unpack_from(">2I2Q2I", binary, offset)
+            offset += 32
+        out.append((start, size))
+    return out
+
+
+def sdk_fields(binary):
+    """Yield (absolute offset of the sdk field, sdk value) for every iOS
+    LC_BUILD_VERSION / LC_VERSION_MIN_IPHONEOS load command in the binary."""
+    for start, _ in slice_offsets(binary):
+        magic = struct.unpack_from("<I", binary, start)[0]
+        if magic == 0xFEEDFACF:
+            offset = start + 32
+        elif magic == 0xFEEDFACE:
+            offset = start + 28
+        else:
+            continue
+        ncmds = struct.unpack_from("<I", binary, start + 16)[0]
+        for _ in range(ncmds):
+            cmd, cmdsize = struct.unpack_from("<2I", binary, offset)
+            if cmd == LC_BUILD_VERSION and struct.unpack_from("<I", binary, offset + 8)[0] == PLATFORM_IOS:
+                yield offset + 16, struct.unpack_from("<I", binary, offset + 16)[0]
+            elif cmd == LC_VERSION_MIN_IPHONEOS:
+                yield offset + 12, struct.unpack_from("<I", binary, offset + 12)[0]
+            if cmdsize == 0:
+                break
+            offset += cmdsize
+
+
+def encode_version(text):
+    parts = [int(p) for p in str(text).split(".")[:3]] + [0, 0]
+    return (parts[0] << 16) | (parts[1] << 8) | parts[2]
+
+
+def decode_version(value):
+    major, minor, patch = value >> 16, (value >> 8) & 0xFF, value & 0xFF
+    return f"{major}.{minor}" + (f".{patch}" if patch else "")
+
+
+def sdk_version(binary):
+    """Lowest iOS SDK version recorded in the binary, e.g. "26.2", or None."""
+    try:
+        values = [v for _, v in sdk_fields(binary)]
+    except struct.error:
+        return None
+    return decode_version(min(values)) if values else None
 CSMAGIC_EMBEDDED_SIGNATURE = 0xFADE0CC0
 CSMAGIC_EMBEDDED_ENTITLEMENTS = 0xFADE7171
 CSSLOT_ENTITLEMENTS = 5

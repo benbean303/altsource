@@ -22,10 +22,12 @@ import re
 import sys
 import tempfile
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+import duo  # noqa: E402
 import ipa  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -93,6 +95,95 @@ def download(url, dest):
     return digest.hexdigest()
 
 
+def file_sha256(path):
+    digest = hashlib.sha256()
+    with open(path, "rb") as f:
+        while chunk := f.read(1 << 20):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+class Releases:
+    """Publishes patched .ipa files as release assets in this source repo."""
+
+    PREFIX = "duo-"
+
+    def __init__(self, repo, token):
+        self.repo = repo
+        self.token = token
+
+    def request(self, method, url, body=None, data=None, content_type=None, length=None):
+        headers = {
+            "Accept": "application/vnd.github+json",
+            "Authorization": f"Bearer {self.token}",
+            "User-Agent": USER_AGENT,
+            "X-GitHub-Api-Version": "2022-11-28",
+        }
+        if body is not None:
+            data = json.dumps(body).encode()
+            headers["Content-Type"] = "application/json"
+        if content_type:
+            headers["Content-Type"] = content_type
+        if length is not None:
+            headers["Content-Length"] = str(length)
+        req = urllib.request.Request(url if url.startswith("https://") else API + url, data=data, method=method, headers=headers)
+        try:
+            with urllib.request.urlopen(req, timeout=600) as resp:
+                text = resp.read()
+                return json.loads(text) if text else None
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                return None
+            raise AppError(f"GitHub API error {e.code} publishing iPhone Duo build: {e.read()[:200]!r}")
+
+    def publish(self, tag, title, notes, name, path):
+        release = self.request("GET", f"/repos/{self.repo}/releases/tags/{tag}")
+        if not release:
+            release = self.request("POST", f"/repos/{self.repo}/releases", body={
+                "tag_name": tag, "name": title, "body": notes, "make_latest": "false",
+            })
+        size = path.stat().st_size
+        for existing in release.get("assets", []):
+            if existing["name"] == name:
+                if existing["size"] == size:
+                    return existing["browser_download_url"]
+                self.request("DELETE", f"/repos/{self.repo}/releases/assets/{existing['id']}")
+        upload = f"https://uploads.github.com/repos/{self.repo}/releases/{release['id']}/assets?name={urllib.parse.quote(name)}"
+        with open(path, "rb") as f:
+            asset = self.request("POST", upload, data=f, content_type="application/octet-stream", length=size)
+        return asset["browser_download_url"]
+
+    def prune(self, keep_tags):
+        """Delete iPhone Duo releases (and their tags) nothing uses any more."""
+        page = 1
+        while True:
+            releases = self.request("GET", f"/repos/{self.repo}/releases?per_page=100&page={page}") or []
+            for release in releases:
+                tag = release["tag_name"]
+                if tag.startswith(self.PREFIX) and tag not in keep_tags:
+                    print(f"removing unused iPhone Duo release {tag}")
+                    self.request("DELETE", f"/repos/{self.repo}/releases/{release['id']}")
+                    self.request("DELETE", f"/repos/{self.repo}/git/refs/tags/{urllib.parse.quote(tag)}")
+            if len(releases) < 100:
+                break
+            page += 1
+
+
+PUBLISHER = None
+
+
+def mark_used(cache, app):
+    """Keep the cache entries (and iPhone Duo builds) behind an app entry we
+    are re-serving without rebuilding it."""
+    shas = {v.get("sha256") for v in app.get("versions", [])}
+    for m in cache.values():
+        if m.get("sha256") in shas:
+            m["_used"] = True
+        if (m.get("duo") or {}).get("sha256") in shas:
+            m["_used"] = True
+            m["_duoUsed"] = True
+
+
 def clean_notes(text):
     text = re.sub(r"<!--.*?-->", "", text or "", flags=re.S)
     text = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", text)            # images
@@ -153,53 +244,97 @@ def build_app(entry, cache, force, base_url, warnings):
     if not candidates:
         raise AppError(f"no release asset matching /{pattern.pattern}/ in the last {len(releases)} releases", permanent=True)
 
+    duo_mode = entry.get("duoPatch") or "auto"
     versions, icon_png = [], None
     bundle_id = None
     seen = set()
-    for index, (release, asset) in enumerate(candidates):
+    for release, asset in candidates:
         key = asset_key(asset)
         meta = None if force else cache.get(key)
+        if meta and "sdkVersion" not in meta:
+            meta = None  # cached before SDK detection existed
         icon_path = ICONS / f"{meta['bundleIdentifier']}.png" if meta else None
         if meta and not versions and meta.get("hasIcon") and not icon_path.exists():
             meta = None  # need the icon back, so re-read the ipa
-        if meta is None:
-            print(f"  downloading {asset['name']} ({asset['size'] // 1024 // 1024} MB)")
-            with tempfile.TemporaryDirectory() as tmp:
-                path = Path(tmp) / "app.ipa"
+
+        with tempfile.TemporaryDirectory() as tmp:
+            original = Path(tmp) / "app.ipa"
+            downloaded = False
+
+            def fetch():
+                print(f"  downloading {asset['name']} ({asset['size'] // 1024 // 1024} MB)")
                 try:
-                    sha = download(asset["browser_download_url"], path)
-                    info = ipa.read_ipa(path)
+                    return download(asset["browser_download_url"], original)
+                except Exception as e:
+                    raise AppError(f"could not download {asset['name']}: {e}")
+
+            if meta is None:
+                sha = fetch()
+                downloaded = True
+                try:
+                    info = ipa.read_ipa(original)
                 except ipa.IPAError as e:
                     warnings.append(f"{release['tag_name']}: skipped, {e}")
                     continue
-                except Exception as e:
-                    raise AppError(f"could not download {asset['name']}: {e}")
-            icon = info.pop("icon")
-            meta = {**info, "sha256": sha, "hasIcon": bool(icon)}
-            cache[key] = meta
-            if icon and not versions:
-                icon_png = icon
-        meta["_used"] = True
+                icon = info.pop("icon")
+                meta = {**info, "sha256": sha, "hasIcon": bool(icon)}
+                cache[key] = meta
+                if icon and not versions:
+                    icon_png = icon
+            meta["_used"] = True
 
-        if bundle_id is None:
-            bundle_id = meta["bundleIdentifier"]
-        elif meta["bundleIdentifier"] != bundle_id:
-            warnings.append(f"{release['tag_name']}: skipped, bundle ID {meta['bundleIdentifier']} differs from latest ({bundle_id})")
-            continue
-        version_key = (meta["version"], meta["buildVersion"])
-        if version_key in seen:
-            warnings.append(f"{release['tag_name']}: skipped, same version {meta['version']} ({meta['buildVersion']}) as a newer release; AltStore can't tell them apart")
-            continue
-        seen.add(version_key)
+            if bundle_id is None:
+                bundle_id = meta["bundleIdentifier"]
+            elif meta["bundleIdentifier"] != bundle_id:
+                warnings.append(f"{release['tag_name']}: skipped, bundle ID {meta['bundleIdentifier']} differs from latest ({bundle_id})")
+                continue
+            version_key = (meta["version"], meta["buildVersion"])
+            if version_key in seen:
+                warnings.append(f"{release['tag_name']}: skipped, same version {meta['version']} ({meta['buildVersion']}) as a newer release; AltStore can't tell them apart")
+                continue
+            seen.add(version_key)
 
+            # iPhone Duo: raise the SDK stamp of older builds, host the result.
+            wants_duo = duo_mode == "auto" and duo.needs_patch(meta.get("sdkVersion"))
+            if wants_duo and not meta.get("duo"):
+                if not PUBLISHER:
+                    if not versions:
+                        warnings.append("can't publish iPhone Duo builds without GITHUB_TOKEN; serving the original")
+                else:
+                    if not downloaded:
+                        fetch()
+                    patched = Path(tmp) / "duo.ipa"
+                    try:
+                        changed = duo.patch_ipa(original, patched)
+                    except Exception as e:
+                        changed = 0
+                        warnings.append(f"{release['tag_name']}: iPhone Duo patch failed ({e}); serving the original")
+                    if changed:
+                        name = duo.asset_name(asset["name"])
+                        tag = duo.release_tag(meta["bundleIdentifier"], meta["version"], meta["buildVersion"])
+                        print(f"  publishing iPhone Duo build {name} (SDK {meta['sdkVersion']} -> {duo.TARGET_SDK})")
+                        url = PUBLISHER.publish(
+                            tag,
+                            f"{meta.get('name') or repo['name']} {meta['version']} (iPhone Duo)",
+                            f"{repo['full_name']} {release['tag_name']} with its SDK stamp raised from "
+                            f"{meta['sdkVersion']} to {duo.TARGET_SDK} so it fills the iPhone Duo inner display.\n\n"
+                            f"Original: {asset['browser_download_url']}",
+                            name,
+                            patched,
+                        )
+                        meta["duo"] = {"tag": tag, "url": url, "size": patched.stat().st_size, "sha256": file_sha256(patched)}
+
+        duo_build = meta.get("duo") if wants_duo else None
+        if duo_build:
+            meta["_duoUsed"] = True
         version = {
             "version": meta["version"],
             "buildVersion": meta["buildVersion"],
             "date": release.get("published_at") or release.get("created_at"),
             "localizedDescription": clean_notes(release.get("body")) or release.get("name") or release["tag_name"],
-            "downloadURL": asset["browser_download_url"],
-            "size": asset["size"],
-            "sha256": meta["sha256"],
+            "downloadURL": duo_build["url"] if duo_build else asset["browser_download_url"],
+            "size": duo_build["size"] if duo_build else asset["size"],
+            "sha256": duo_build["sha256"] if duo_build else meta["sha256"],
         }
         if meta.get("minOSVersion"):
             version["minOSVersion"] = str(meta["minOSVersion"])
@@ -264,8 +399,21 @@ def build_app(entry, cache, force, base_url, warnings):
         "latestTag": candidates[0][0]["tag_name"],
         "iconURL": icon_url,
         "versions": len(versions),
+        "sdkVersion": latest_meta.get("sdkVersion"),
+        "duo": duo_state(duo_mode, latest_meta),
     }
     return app, status
+
+
+def duo_state(mode, meta):
+    """How the latest version runs on iPhone Duo, for the web app."""
+    if not meta.get("sdkVersion"):
+        return "unknown"
+    if not duo.needs_patch(meta["sdkVersion"]):
+        return "ready"
+    if mode != "auto":
+        return "off"
+    return "patched" if meta.get("duo") else "original"
 
 
 # --- main ------------------------------------------------------------------
@@ -281,6 +429,10 @@ def main():
         if repo:
             previous_apps[repo.lower()] = app
 
+    global PUBLISHER
+    if os.environ.get("GITHUB_TOKEN") and os.environ.get("GITHUB_REPOSITORY"):
+        PUBLISHER = Releases(os.environ["GITHUB_REPOSITORY"], os.environ["GITHUB_TOKEN"])
+
     only = (os.environ.get("ONLY_APP") or "").strip().lower()
     force = os.environ.get("FORCE", "").lower() == "true"
     base_url = pages_url(config)
@@ -293,10 +445,7 @@ def main():
         if only and key != only and key in previous_apps:
             app = previous_apps[key]
             status = previous_status.get(repo) or {"state": "ok"}
-            for v in app.get("versions", []):
-                for k, m in cache.items():
-                    if m.get("sha256") == v.get("sha256"):
-                        m["_used"] = True
+            mark_used(cache, app)
         else:
             print(f"{repo}")
             try:
@@ -310,10 +459,7 @@ def main():
                 status["state"] = "error"
                 warnings.insert(0, str(e) + (" (still serving the last good version)" if app else ""))
                 if app:
-                    for v in app.get("versions", []):
-                        for m in cache.values():
-                            if m.get("sha256") == v.get("sha256"):
-                                m["_used"] = True
+                    mark_used(cache, app)
             status["messages"] = warnings
             for w in warnings:
                 print(f"  {w}")
@@ -352,6 +498,11 @@ def main():
     # Prune cache entries and icons that nothing references any more.
     for k in [k for k, m in cache.items() if not m.pop("_used", False)]:
         del cache[k]
+    for m in cache.values():
+        if not m.pop("_duoUsed", False):
+            m.pop("duo", None)
+    if PUBLISHER:
+        PUBLISHER.prune({m["duo"]["tag"] for m in cache.values() if m.get("duo")})
     write_json(CACHE, dict(sorted(cache.items())))
     keep = {f"{a['bundleIdentifier']}.png" for a in apps}
     if ICONS.exists():

@@ -1,6 +1,20 @@
 import { GitHub, HttpError, parseRepoInput, patternForAsset, DEFAULT_PATTERN, isAppAsset } from "./github.js";
 
 const CATEGORIES = ["other", "developer", "entertainment", "games", "lifestyle", "photo-video", "social", "utilities"];
+const DUO_LABELS = {
+  ready: ["ok", "Fills the screen: built with a new enough SDK"],
+  patched: ["ok", "Patched to fill the screen"],
+  original: ["warn", "Letterboxed: patch pending, waiting for the next build"],
+  off: ["warn", "Letterboxed: patching is turned off"],
+  unknown: ["warn", "Unknown: couldn't read the SDK version"],
+};
+
+function duoLine(st) {
+  if (!st?.duo) return null;
+  const [kind, text] = DUO_LABELS[st.duo] || DUO_LABELS.unknown;
+  const sdk = st.sdkVersion ? ` (release built with iOS ${st.sdkVersion} SDK)` : "";
+  return h("div", { class: `sub duo ${kind}` }, "iPhone Duo: ", text, sdk);
+}
 const store = {
   get(key) {
     try {
@@ -282,7 +296,7 @@ function homeScreen() {
                 "div",
                 { class: "grow" },
                 h("div", { class: "title" }, entry.overrides?.name || st?.name || entry.repo.split("/")[1]),
-                h("div", { class: "sub" }, st?.version ? `${st.version} · ${ago(st.updatedAt)}` : entry.repo)
+                h("div", { class: "sub" }, st?.version ? `${st.version} · ${ago(st.updatedAt)}${st.duo === "patched" ? " · Duo patched" : ""}` : entry.repo)
               ),
               badge[1] ? h("span", { class: `badge ${badge[0]}` }, badge[1]) : null,
               h("span", { class: "chev" }, "›")
@@ -494,6 +508,7 @@ async function preview(line) {
       assetPattern: patternInput.value,
       includePrereleases: prerelease.checked,
       maxVersions: 5,
+      duoPatch: "auto",
       overrides: {},
       addedAt: new Date().toISOString(),
     }),
@@ -520,6 +535,12 @@ function appScreen(repoName) {
   const pattern = h("input", { value: entry.assetPattern || DEFAULT_PATTERN, autocapitalize: "off", autocorrect: "off", spellcheck: "false" });
   const prerelease = h("input", { type: "checkbox", checked: !!entry.includePrereleases });
   const maxVersions = h("input", { type: "number", min: 1, max: 20, value: entry.maxVersions || 5, inputmode: "numeric" });
+  const duoPatch = h(
+    "select",
+    {},
+    h("option", { value: "auto", selected: (entry.duoPatch || "auto") === "auto" }, "Patch older builds to fill the screen"),
+    h("option", { value: "off", selected: entry.duoPatch === "off" }, "Use the original release")
+  );
 
   async function saveSettings(button) {
     try {
@@ -544,6 +565,7 @@ function appScreen(repoName) {
         target.assetPattern = pattern.value.trim() || DEFAULT_PATTERN;
         target.includePrereleases = prerelease.checked;
         target.maxVersions = Math.min(20, Math.max(1, parseInt(maxVersions.value, 10) || 5));
+        target.duoPatch = duoPatch.value;
       });
       toast("Saved, rebuilding…", "ok");
       location.hash = "#/";
@@ -607,6 +629,7 @@ function appScreen(repoName) {
           )
         ),
         st.bundleIdentifier ? h("div", { class: "sub mono" }, st.bundleIdentifier) : null,
+        duoLine(st),
         (st.messages || []).map((m) => h("div", { class: `notice ${st.state === "error" ? "error" : "warn"}` }, m))
       ),
 
@@ -660,6 +683,7 @@ function appScreen(repoName) {
           h("label", {}, "Tint color", fields.tintColor),
           h("label", {}, "Category", fields.category),
           h("label", {}, "Versions to keep", maxVersions),
+          h("label", {}, "iPhone Duo", duoPatch),
           h("label", { class: "check" }, prerelease, "Include pre-releases"),
           h("label", {}, "File pattern (regex)", pattern),
           h("button", { class: "primary", onClick: (e) => saveSettings(e.currentTarget) }, "Save changes")

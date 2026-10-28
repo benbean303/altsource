@@ -1,6 +1,6 @@
 // Network first, falling back to cache, so the app opens offline but always
 // picks up new versions when online.
-const CACHE = "source-manager-v1";
+const CACHE = "source-manager-v2";
 const SHELL = ["./", "index.html", "app.js", "github.js", "styles.css", "manifest.webmanifest", "icon-180.png", "icon-512.png"];
 
 self.addEventListener("install", (event) => {
