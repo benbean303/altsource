@@ -4,5 +4,14 @@
     "subtitle": "Apps from GitHub releases",
     "tintColor": "#5B6CFF"
   },
-  "apps": []
+  "apps": [
+    {
+      "repo": "bryanthaboi/gen1recomp",
+      "assetPattern": "\\.ipa$",
+      "includePrereleases": false,
+      "maxVersions": 5,
+      "overrides": {},
+      "addedAt": "2026-10-28T05:53:31.606Z"
+    }
+  ]
 }
