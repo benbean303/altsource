@@ -2,7 +2,8 @@
   "source": {
     "name": "My AltStore Source",
     "subtitle": "Apps from GitHub releases",
-    "tintColor": "#5B6CFF"
+    "tintColor": "#5B6CFF",
+    "sourceURL": "https://altsource.benbean303.workers.dev/source.json"
   },
   "apps": [
     {
