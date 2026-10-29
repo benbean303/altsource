@@ -14,6 +14,20 @@
       "duo": "patched",
       "state": "ok",
       "messages": []
+    },
+    "kuscholar/iDeck": {
+      "name": "iDeck",
+      "bundleIdentifier": "com.kuschqin.madeira.steamui",
+      "version": "0.1.3",
+      "buildVersion": "99",
+      "updatedAt": "2026-10-29T04:58:56Z",
+      "latestTag": "v0.1.3-alpha.4",
+      "iconURL": "https://benbean303.github.io/altsource/icons/com.kuschqin.madeira.steamui.png",
+      "versions": 4,
+      "sdkVersion": "27.0",
+      "duo": "patched",
+      "state": "ok",
+      "messages": []
     }
   }
 }

@@ -91,6 +91,54 @@
       "sha256": "cc73b61241075be217089f70804a5aa5d2dd2a88e824133a850385fd41fc761f"
     }
   },
+  "676410020:166192230:2026-10-25T23:28:01Z": {
+    "bundleIdentifier": "com.kuschqin.madeira.steamui",
+    "name": "iDeck",
+    "version": "0.1.3",
+    "buildVersion": "54",
+    "minOSVersion": "26.0",
+    "sdkVersion": "27.0",
+    "entitlements": [
+      "com.apple.developer.kernel.increased-memory-limit",
+      "com.apple.security.cs.allow-jit",
+      "get-task-allow"
+    ],
+    "privacy": {
+      "NSLocalNetworkUsageDescription": "Madeira uses the local network to pair with this device for JIT, without a computer."
+    },
+    "sha256": "29ba0c5a66af500d832680cb7ee8a3c683fa8c7e4bcfe215d0b6ed78543cb4af",
+    "hasIcon": true,
+    "duo": {
+      "tag": "duo-com.kuschqin.madeira.steamui-0.1.3-54",
+      "url": "https://github.com/benbean303/altsource/releases/download/duo-com.kuschqin.madeira.steamui-0.1.3-54/iDeck-0.1.3-alpha.1-build54-duo.ipa",
+      "size": 166780790,
+      "sha256": "9b50e400d5e5d80f11663db0ed62db23e0ccb27c02a20f97b0d88f27f08cf730"
+    }
+  },
+  "676580849:166277351:2026-10-26T00:58:36Z": {
+    "bundleIdentifier": "com.kuschqin.madeira.steamui",
+    "name": "iDeck",
+    "version": "0.1.3",
+    "buildVersion": "56",
+    "minOSVersion": "26.0",
+    "sdkVersion": "27.0",
+    "entitlements": [
+      "com.apple.developer.kernel.increased-memory-limit",
+      "com.apple.security.cs.allow-jit",
+      "get-task-allow"
+    ],
+    "privacy": {
+      "NSLocalNetworkUsageDescription": "Madeira uses the local network to pair with this device for JIT, without a computer."
+    },
+    "sha256": "caacf38f82b7723add8ece294a0bc0329c7e85c1c801a7be9a79ce287e626785",
+    "hasIcon": true,
+    "duo": {
+      "tag": "duo-com.kuschqin.madeira.steamui-0.1.3-56",
+      "url": "https://github.com/benbean303/altsource/releases/download/duo-com.kuschqin.madeira.steamui-0.1.3-56/iDeck-0.1.3-alpha.2-build56-duo.ipa",
+      "size": 166871991,
+      "sha256": "1b49c83b24231af9f4a7817dc6239080aa10bb1cebd2d644305acbabb02dee64"
+    }
+  },
   "678789636:44714538:2026-10-26T16:42:08Z": {
     "bundleIdentifier": "com.theboisclub.gen1recompplusplus",
     "name": "gen1recomp++",
@@ -112,6 +160,54 @@
       "url": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.97-397/gen1recomp%2B%2B-0.3.97-ios-duo.ipa",
       "size": 44713228,
       "sha256": "18c72024bcfa2d3f92518fb6a40e9cf8a3353307c48501d03254dc9595941f90"
+    }
+  },
+  "680418465:166326764:2026-10-27T04:20:32Z": {
+    "bundleIdentifier": "com.kuschqin.madeira.steamui",
+    "name": "iDeck",
+    "version": "0.1.3",
+    "buildVersion": "67",
+    "minOSVersion": "26.0",
+    "sdkVersion": "27.0",
+    "entitlements": [
+      "com.apple.developer.kernel.increased-memory-limit",
+      "com.apple.security.cs.allow-jit",
+      "get-task-allow"
+    ],
+    "privacy": {
+      "NSLocalNetworkUsageDescription": "Madeira uses the local network to pair with this device for JIT, without a computer."
+    },
+    "sha256": "8cc51d547c9c61903b2b13db87543a6b7d044c731e5ac83b37110675c0b66093",
+    "hasIcon": true,
+    "duo": {
+      "tag": "duo-com.kuschqin.madeira.steamui-0.1.3-67",
+      "url": "https://github.com/benbean303/altsource/releases/download/duo-com.kuschqin.madeira.steamui-0.1.3-67/iDeck-0.1.3-alpha.3-build67-duo.ipa",
+      "size": 166920835,
+      "sha256": "da0e575c92334fc135fe85d69acd61b4b96d7bc8b1834cd9158f4568ebc2b816"
+    }
+  },
+  "687405755:166772750:2026-10-29T04:58:30Z": {
+    "bundleIdentifier": "com.kuschqin.madeira.steamui",
+    "name": "iDeck",
+    "version": "0.1.3",
+    "buildVersion": "99",
+    "minOSVersion": "26.0",
+    "sdkVersion": "27.0",
+    "entitlements": [
+      "com.apple.developer.kernel.increased-memory-limit",
+      "com.apple.security.cs.allow-jit",
+      "get-task-allow"
+    ],
+    "privacy": {
+      "NSLocalNetworkUsageDescription": "Madeira uses the local network to pair with this device for JIT, without a computer."
+    },
+    "sha256": "c09687a26e6695a329348a869a74bacf004217713d4fd7c223b5263f818552a1",
+    "hasIcon": true,
+    "duo": {
+      "tag": "duo-com.kuschqin.madeira.steamui-0.1.3-99",
+      "url": "https://github.com/benbean303/altsource/releases/download/duo-com.kuschqin.madeira.steamui-0.1.3-99/iDeck-0.1.3-alpha.4-build99-duo.ipa",
+      "size": 167374202,
+      "sha256": "d0aed4be0d8d8049da03aff7b909ee919483cdbf938f9a656f587d602e1537f0"
     }
   }
 }
