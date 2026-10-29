@@ -390,7 +390,29 @@ function addScreen(prefill = "") {
           },
         },
         input,
-        lookup
+        h(
+          "div",
+          { class: "button-row" },
+          h(
+            "button",
+            {
+              class: "secondary",
+              type: "button",
+              async onClick() {
+                try {
+                  const text = (await navigator.clipboard.readText()).trim();
+                  if (!text) return toast("The clipboard is empty", "error");
+                  input.value = text;
+                  run();
+                } catch {
+                  toast("Couldn't read the clipboard. Long-press the box and choose Paste.", "error");
+                }
+              },
+            },
+            "Paste"
+          ),
+          lookup
+        )
       ),
       results
     )
@@ -809,13 +831,35 @@ function settingsScreen() {
 
 // --- routing ---------------------------------------------------------------
 
+// A link to add (from the share-sheet Shortcut) arrives as #add=<url>,
+// #/add?url=<url> or ?add=<url>. Take it out of the address bar straight away
+// and hold on to it, so it survives the Connect screen and loading.
+function takeAddLink() {
+  const m = location.hash.match(/^#add=(.+)$/) || location.hash.match(/^#\/add\?url=(.+)$/);
+  let url = new URLSearchParams(location.search).get("add");
+  if (m) {
+    try {
+      url = decodeURIComponent(m[1]);
+    } catch {
+      url = m[1];
+    }
+  }
+  if (!url) return null;
+  history.replaceState(null, "", location.pathname + "#/add");
+  return url;
+}
+
+let pendingAdd = takeAddLink();
+
 function route() {
+  pendingAdd = takeAddLink() || pendingAdd;
   if (!state.gh || !state.config) return;
   const hash = location.hash || "#/";
   let m;
-  if ((m = hash.match(/^#add=(.+)$/)) || (m = hash.match(/^#\/add\?url=(.+)$/))) {
-    const url = decodeURIComponent(m[1]);
-    history.replaceState(null, "", "#/add");
+  if (pendingAdd) {
+    const url = pendingAdd;
+    pendingAdd = null;
+    if (location.hash !== "#/add") history.replaceState(null, "", location.pathname + "#/add");
     addScreen(url);
   } else if (hash === "#/add") addScreen();
   else if ((m = hash.match(/^#\/app\/(.+)$/))) appScreen(decodeURIComponent(m[1]));
@@ -851,7 +895,8 @@ document.addEventListener("visibilitychange", async () => {
   if (document.visibilityState === "visible" && state.gh && state.config && !state.watching) {
     try {
       await loadAll();
-      if (["", "#/"].includes(location.hash)) route();
+      pendingAdd = takeAddLink() || pendingAdd;
+      if (["", "#/"].includes(location.hash) || pendingAdd) route();
     } catch {}
   }
 });

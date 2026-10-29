@@ -183,6 +183,7 @@ button:disabled { opacity: .55; }
 .card .secondary { background: var(--input); }
 .danger { background: var(--card); color: var(--bad); }
 .wide { width: 100%; }
+.button-row { display: grid; grid-template-columns: 1fr 2fr; gap: 12px; }
 
 details summary { cursor: pointer; color: var(--accent); font-size: 14px; }
 details label { margin-top: 10px; }

@@ -103,12 +103,22 @@ Copy the token.
 iOS doesn't let web apps appear in the share sheet, but a Shortcut can:
 
 1. Shortcuts → new shortcut → enable **Show in Share Sheet**, input type **URLs**.
-2. Add action **URL**: `https://YOUR-USERNAME.github.io/altsource/admin/#add=` then
+2. Add action **Copy to Clipboard** with **Shortcut Input**.
+3. Add action **URL**: `https://YOUR-USERNAME.github.io/altsource/admin/#add=` then
    insert the **Shortcut Input** variable at the end.
-3. Add action **Open URLs**.
-4. Name it "Add to My Source".
+4. Add action **Open URLs**.
+5. Name it "Add to My Source".
 
-Now on any GitHub repo page in Safari: Share → Add to My Source.
+Now on any GitHub repo page in Safari: Share → Add to My Source. The
+admin page opens on **Add app** with that repo looked up.
+
+- **It shows Connect:** the link opened in Safari, which keeps its own storage
+  separate from the home-screen app. Connect once there; the repo you shared is
+  kept and opens straight after.
+- **It just brings the home-screen app to the front:** iOS passed no link. Tap
+  **+ Add app → Paste**. Step 2 already put the link on the clipboard.
+
+The page also accepts `?add=<url-encoded link>` in place of `#add=`.
 
 ### 8. Serve the source without caching (Cloudflare Worker)
 
