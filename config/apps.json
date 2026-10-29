@@ -13,6 +13,15 @@
       "maxVersions": 5,
       "overrides": {},
       "addedAt": "2026-10-28T05:53:31.606Z"
+    },
+    {
+      "repo": "kuscholar/iDeck",
+      "assetPattern": "\\.ipa$",
+      "includePrereleases": true,
+      "maxVersions": 5,
+      "duoPatch": "auto",
+      "overrides": {},
+      "addedAt": "2026-10-29T06:41:56.351Z"
     }
   ]
 }
