@@ -23,6 +23,16 @@
       "screenshots": [],
       "versions": [
         {
+          "version": "0.3.98",
+          "buildVersion": "398",
+          "date": "2026-10-29T22:18:53Z",
+          "localizedDescription": "squash deez\n\nIssues closed\n\n- #3066 Trainer gender bug? (Sapphire)\n- #3069 Can't move items in bag in Gen 3 (Emerald, FRLG)\n- #3071 Jessie james sprites are not colored with advanced colors (OVERWORLD)\n- #3073 some attack moves like SMOG, bug the color pallete in battle while its attacking (ADVANCE COLORS)\n- #3075 Pressing L and  ZL or zr etc speed up the game\n- #3076 Dynamic UI isnt working properly\n- #3078 Button mapping option missing\n- #3079 modkit lint MK301 rejects the assets/generated/ paths that mod.datasets view.assets:path requires\n- #3080 emerald export\n\nContributors\n\n- @bryanthaboi",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.98-398/gen1recomp%2B%2B-0.3.98-ios-duo.ipa",
+          "size": 44720030,
+          "sha256": "7529afee79821886e581a9a90aeb711529e4ccd6f4d114f4183cca4532f38fff",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.3.97",
           "buildVersion": "397",
           "date": "2026-10-26T16:42:12Z",
@@ -61,16 +71,6 @@
           "size": 44707769,
           "sha256": "f3e9c84ef61394e0918c6b118949680d92302c79ba073a5955acaacea926f203",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "0.3.93",
-          "buildVersion": "393",
-          "date": "2026-10-20T21:29:38Z",
-          "localizedDescription": "major mod api update\n\nCo-authored-by: Nexhas28 <45065431+Nexhas28@users.noreply.github.com>\n\nContributors\n\n- @bryanthaboi\n- @Nexhas28",
-          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.93-393/gen1recomp%2B%2B-0.3.93-ios-duo.ipa",
-          "size": 44711756,
-          "sha256": "54764b6a13846bbe7790735f8c6b6509ef46221940961a1f6dbedccf13faf42f",
-          "minOSVersion": "15.0"
         }
       ],
       "appPermissions": {
@@ -82,11 +82,11 @@
           "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
         }
       },
-      "version": "0.3.97",
-      "versionDate": "2026-10-26T16:42:12Z",
-      "versionDescription": "… CLOSES #3059, CLOSES #3061, CLOSES #3062\n\nIssues closed\n\n- #3048 emerald data gets imported twice on portable installation\n- #3049 (Modding API v3) battleScaleBack causes error in gen2 games\n- #3055 mod.datasets:open(\"crystal\") rejects Crystal's pokemon data over its tutorMoves table\n- #3057 Mod update fails with \"string length overflow\" when baseroms/ holds a ~2 GiB import\n- #3058 mod.datasets: Gen 2's fishing art (menu_gfx emotes) can't be reached\n- #3059 Oak music in Gold starts too early\n- #3061 CD icons for Dark TMs in the TM Case are invisible.\n- #3062 Event Pokemon are missing the \"Fateful Encounter\" flag\n\nContributors\n\n- @bryanthaboi",
-      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.97-397/gen1recomp%2B%2B-0.3.97-ios-duo.ipa",
-      "size": 44713228,
+      "version": "0.3.98",
+      "versionDate": "2026-10-29T22:18:53Z",
+      "versionDescription": "squash deez\n\nIssues closed\n\n- #3066 Trainer gender bug? (Sapphire)\n- #3069 Can't move items in bag in Gen 3 (Emerald, FRLG)\n- #3071 Jessie james sprites are not colored with advanced colors (OVERWORLD)\n- #3073 some attack moves like SMOG, bug the color pallete in battle while its attacking (ADVANCE COLORS)\n- #3075 Pressing L and  ZL or zr etc speed up the game\n- #3076 Dynamic UI isnt working properly\n- #3078 Button mapping option missing\n- #3079 modkit lint MK301 rejects the assets/generated/ paths that mod.datasets view.assets:path requires\n- #3080 emerald export\n\nContributors\n\n- @bryanthaboi",
+      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.98-398/gen1recomp%2B%2B-0.3.98-ios-duo.ipa",
+      "size": 44720030,
       "_repo": "bryanthaboi/gen1recomp"
     },
     {
