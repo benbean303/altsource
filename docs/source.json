@@ -23,6 +23,16 @@
       "screenshots": [],
       "versions": [
         {
+          "version": "0.3.99",
+          "buildVersion": "399",
+          "date": "2026-10-31T23:14:46Z",
+          "localizedDescription": "JdsjziziakakLLl\n\nContributors\n\n- @bryanthaboi",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.99-399/gen1recomp%2B%2B-0.3.99-ios-duo.ipa",
+          "size": 44720552,
+          "sha256": "d72be035ee16c3921a9415a3a95e1e14ba11f9cb1c46464005f03905d952d305",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.3.98",
           "buildVersion": "398",
           "date": "2026-10-29T22:18:53Z",
@@ -61,16 +71,6 @@
           "size": 44712394,
           "sha256": "3b29c1ff3d82397fa33e3833248a497bbf91b71c6ab037279882b10ab93e9f1c",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "0.3.94",
-          "buildVersion": "394",
-          "date": "2026-10-21T00:45:19Z",
-          "localizedDescription": "Shiny api gen 3\n\nContributors\n\n- @bryanthaboi",
-          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.94-394/gen1recomp%2B%2B-0.3.94-ios-duo.ipa",
-          "size": 44707769,
-          "sha256": "f3e9c84ef61394e0918c6b118949680d92302c79ba073a5955acaacea926f203",
-          "minOSVersion": "15.0"
         }
       ],
       "appPermissions": {
@@ -82,11 +82,11 @@
           "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
         }
       },
-      "version": "0.3.98",
-      "versionDate": "2026-10-29T22:18:53Z",
-      "versionDescription": "squash deez\n\nIssues closed\n\n- #3066 Trainer gender bug? (Sapphire)\n- #3069 Can't move items in bag in Gen 3 (Emerald, FRLG)\n- #3071 Jessie james sprites are not colored with advanced colors (OVERWORLD)\n- #3073 some attack moves like SMOG, bug the color pallete in battle while its attacking (ADVANCE COLORS)\n- #3075 Pressing L and  ZL or zr etc speed up the game\n- #3076 Dynamic UI isnt working properly\n- #3078 Button mapping option missing\n- #3079 modkit lint MK301 rejects the assets/generated/ paths that mod.datasets view.assets:path requires\n- #3080 emerald export\n\nContributors\n\n- @bryanthaboi",
-      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.98-398/gen1recomp%2B%2B-0.3.98-ios-duo.ipa",
-      "size": 44720030,
+      "version": "0.3.99",
+      "versionDate": "2026-10-31T23:14:46Z",
+      "versionDescription": "JdsjziziakakLLl\n\nContributors\n\n- @bryanthaboi",
+      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.99-399/gen1recomp%2B%2B-0.3.99-ios-duo.ipa",
+      "size": 44720552,
       "_repo": "bryanthaboi/gen1recomp"
     },
     {
