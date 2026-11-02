@@ -23,6 +23,16 @@
       "screenshots": [],
       "versions": [
         {
+          "version": "0.4.0",
+          "buildVersion": "400",
+          "date": "2026-11-02T20:00:59Z",
+          "localizedDescription": "bugs and some switch stuff\n\nIssues closed\n\n- #3083 Whitescreen on Trendy Phrase/Gabbys Interview screen\n- #3088 Scrolling issues on iOS\n- #3089 Missing phone jingle\n- #3090 Gen2 Bug-Catching Contest ignores the encounters registry\n- #3091 Gold: script.command's ctx.mapId is never the map label\n- #3092 Gen 2: mods can't add Fly destinations\n- #3094 Pokeball catching animation is skipping CRYSTAL\n- #3096 Asking to press button while trainer send pokemon\n- #3097 Shaders cant be downloaded on switch\n- #3098 No dynamic option UI on crystal\n\nContributors\n\n- @booshankles\n- @bryanthaboi",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.0-400/gen1recomp%2B%2B-0.4.0-ios-duo.ipa",
+          "size": 44725831,
+          "sha256": "e8cfda87cbf17c7d7af8cc3ec9667aa9c5913b305b6894242923e88f33cfd98d",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.3.99",
           "buildVersion": "399",
           "date": "2026-10-31T23:14:46Z",
@@ -61,16 +71,6 @@
           "size": 44710740,
           "sha256": "cc73b61241075be217089f70804a5aa5d2dd2a88e824133a850385fd41fc761f",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "0.3.95",
-          "buildVersion": "395",
-          "date": "2026-10-21T02:42:51Z",
-          "localizedDescription": "Mod Mon index cap 🧢\n\nContributors\n\n- @bryanthaboi",
-          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.95-395/gen1recomp%2B%2B-0.3.95-ios-duo.ipa",
-          "size": 44712394,
-          "sha256": "3b29c1ff3d82397fa33e3833248a497bbf91b71c6ab037279882b10ab93e9f1c",
-          "minOSVersion": "15.0"
         }
       ],
       "appPermissions": {
@@ -82,11 +82,11 @@
           "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
         }
       },
-      "version": "0.3.99",
-      "versionDate": "2026-10-31T23:14:46Z",
-      "versionDescription": "JdsjziziakakLLl\n\nContributors\n\n- @bryanthaboi",
-      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.99-399/gen1recomp%2B%2B-0.3.99-ios-duo.ipa",
-      "size": 44720552,
+      "version": "0.4.0",
+      "versionDate": "2026-11-02T20:00:59Z",
+      "versionDescription": "bugs and some switch stuff\n\nIssues closed\n\n- #3083 Whitescreen on Trendy Phrase/Gabbys Interview screen\n- #3088 Scrolling issues on iOS\n- #3089 Missing phone jingle\n- #3090 Gen2 Bug-Catching Contest ignores the encounters registry\n- #3091 Gold: script.command's ctx.mapId is never the map label\n- #3092 Gen 2: mods can't add Fly destinations\n- #3094 Pokeball catching animation is skipping CRYSTAL\n- #3096 Asking to press button while trainer send pokemon\n- #3097 Shaders cant be downloaded on switch\n- #3098 No dynamic option UI on crystal\n\nContributors\n\n- @booshankles\n- @bryanthaboi",
+      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.0-400/gen1recomp%2B%2B-0.4.0-ios-duo.ipa",
+      "size": 44725831,
       "_repo": "bryanthaboi/gen1recomp"
     },
     {
