@@ -25,7 +25,7 @@
       "iconURL": "https://benbean303.github.io/altsource/icons/com.kuschqin.madeira.steamui.png",
       "versions": 5,
       "sdkVersion": "27.0",
-      "duo": "patched",
+      "duo": "unsupported",
       "state": "ok",
       "messages": []
     },
@@ -39,7 +39,7 @@
       "iconURL": "https://benbean303.github.io/altsource/icons/com.zemabinks.gtamp.enginelanlab.png",
       "versions": 4,
       "sdkVersion": "26.2",
-      "duo": "patched",
+      "duo": "unsupported",
       "state": "warning",
       "messages": [
         "v2.0.0-beta.4: skipped, same version 2.0 (109) as a newer release; AltStore can't tell them apart"
