@@ -8,7 +8,8 @@
   "tintColor": "#5B6CFF",
   "featuredApps": [
     "com.theboisclub.gen1recompplusplus",
-    "com.kuschqin.madeira.steamui"
+    "com.kuschqin.madeira.steamui",
+    "com.zemabinks.gtamp.enginelanlab"
   ],
   "apps": [
     {
@@ -167,6 +168,75 @@
       "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.kuschqin.madeira.steamui-0.1.3-143/iDeck-0.1.3-alpha.5-build143-duo.ipa",
       "size": 166992052,
       "_repo": "kuscholar/iDeck"
+    },
+    {
+      "name": "ZGTA V",
+      "bundleIdentifier": "com.zemabinks.gtamp.enginelanlab",
+      "developerName": "zemabinks",
+      "subtitle": "ZGTA 5 by zema. Solo Story, Free Roam and private multiplayer. Browser/Mac 1.2; iOS 1.1 beta 1. Your own matching game f",
+      "localizedDescription": "ZGTA 5 by zema. Solo Story, Free Roam and private multiplayer. Browser/Mac 1.2; iOS 1.1 beta 1. Your own matching game files required.\n\nSource: https://github.com/zemabinks/ZGTA-V",
+      "iconURL": "https://benbean303.github.io/altsource/icons/com.zemabinks.gtamp.enginelanlab.png",
+      "tintColor": "#72AD3C",
+      "category": "other",
+      "screenshots": [],
+      "versions": [
+        {
+          "version": "2.0",
+          "buildVersion": "109",
+          "date": "2026-11-01T15:46:29Z",
+          "localizedDescription": "ZGTA 5 1.1 beta 1 — proximity voice\n\n**iOS 109 · Browser 109 · Mac DMG 109.1 · Sileo installer 1.1~beta1**\n\nWhat's new\n\n- **Proximity voice for private multiplayer:** talk between iPhone and browser players using the existing microphone and speaker buttons.\n- **Clearer distance audio:** voices are loud nearby, progressively quieter as players separate, and silent beyond 35 metres. Volume changes are smoothed while moving.\n- **Separate voice controls:** switch your microphone off or mute nearby voices while game audio stays separate. No separate multiplayer bridge interface is needed.\n- **Same private hosting:** voice uses your compatible Engine LAN relay over LAN or private Tailscale. No public voice service or new account is required.\n- **Keep your data:** update over the existing app and retain your game files, saves and settings. Do not delete the app to update.\n\nUpdating and limits\n\nThe owner confirmed Build 109 installation/data, actual iPhone/Mac speech both ways, smooth distance reduction, out-of-range silence/return and microphone mute. Distances in the owner listening check were estimated; automated native/browser PCM measurements check the actual curve.\n\nThe microphone starts off and requires permission. Browser capture needs a secure context, such as the local launcher address or HTTPS. Hiding the game tab pauses voice; enable it again when returning.\n\nMac 109.1 packages exactly the browser 109 payload tested on Mac. Its launcher sources and pinned runtimes are unchanged from 107.1; mounted hashes, signatures, bundled Intel Python and native-layout checks pass. The109.1 drag-install was not repeated. The Mac app is ad-hoc signed, not Apple-notarized.\n\nWindows/Android/Linux and Apple Silicon execution, AppSync installation, Bluetooth/interruption handling and simultaneous speakerphone echo remain unverified. Android is a Termux/browser package, not an APK. This voice release does not claim a new physical 3 GB iPhone performance benchmark.\n\nStable Sileo installer 1.1~beta1 uses the same tested Build 109 IPA as private 1.1~beta1. Its version, descriptions and public download pins differ; the installation method and app identity are preserved. That public metadata wrapper was not separately phone-tested. AppSync remains experimental for compatible ARM64 rootful devices, not RootHide/rootless.\n\nYour own compatible game files are required. No commercial game content is included. Install/update · Verification scope.\n\nNaming transition\n\nThis is the previously owner-tested beta4 payload, renamed **ZGTA 5 — 1.1 beta 1** at the owner’s request. Sileo package version is `1.1~beta1`. App/engine payloads are unchanged; internal Build109/109.1 and old artifact metadata remain valid provenance. The new browser design is a separate private candidate and is not included in this release.",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.zemabinks.gtamp.enginelanlab-2.0-109/ZGTA-V-Build109-VoiceDistance-TrollStore-duo.ipa",
+          "size": 117655034,
+          "sha256": "86d17153e8c11ac38f8fefeb265eacc79024c8d071ab7bd1cf3dec9670c584b4",
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "2.0",
+          "buildVersion": "107",
+          "date": "2026-10-31T16:07:51Z",
+          "localizedDescription": "ZGTA V 2.0 beta 3\n\nDownloads · Installation\n\n**iOS 107 · Mac DMG 107.1 · Browser 107 · Mac relay controls 1.1**\n\nWhat changed\n\n- **More reliable rendering:** fixed buildings flickering or disappearing at\n  certain camera angles. The previously affected scene was retested on iPhone.\n- **Memory controls for different devices:** Automatic, Standard and Reduced\n  memory management are separate from graphics presets, resolution and FPS.\n  Reduced mode uses fewer background prefetch jobs and releases completed idle\n  graphics storage earlier. Higher-memory devices retain their Standard policy.\n- **Heat protection and diagnostics:** frame-rate safeguards preserve saved\n  settings, and reports distinguish active session settings from pending changes.\n- **LAN server browsing:** discover nearby ZGTA hosts using their announced\n  port. Updated managed Mac servers remain visible with zero players, so the\n  first player can select the room without entering its address manually.\n- **Cleaner settings:** browser Graphics, Controls, Mods, Saves and Support are\n  integrated pages under one main navigation. iPhone preset descriptions and\n  Find Lobby artwork are corrected.\n- **Mac installation:** a new DMG lets you drag ZGTA V into Applications. The\n  launcher includes its Python runtime; Chrome and your compatible game files\n  are still required.\n\nUpdating and current limits\n\n- Keep your existing game files and saves. Install the app update over the\n  existing app; do not remove its data to update.\n- LAN discovery requires a compatible host announcement and local-network\n  access. Existing managed Mac hosts need relay controls1.1 or a ZRemote bundle\n  containing the updated helper. This is not a public worldwide server list;\n  Tailscale remains a private invite/address connection.\n- Reduced-memory improvements have not yet been benchmarked on a physical\n  3 GB iPhone SE2020. There is no promise of stable 60 FPS on every device.\n- Windows and Android receive the shared browser changes, but execution on\n  those devices has not been tested. Android remains a Termux/browser package,\n  not an APK.\n- The Mac app is ad-hoc signed and is not Apple-notarized. Intel execution was\n  checked; the bundled Apple Silicon runtime still needs execution testing.\n- This remains a beta. Your own compatible game files are required; no\n  commercial game content is included.",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.zemabinks.gtamp.enginelanlab-2.0-107/ZGTA-V-Build107-Memory-UI-Audit-TrollStore-duo.ipa",
+          "size": 117639002,
+          "sha256": "3b841da79041f62e5eb72554396068b8a2c422fab3400263b3a61903df1381b5",
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "2.0",
+          "buildVersion": "96",
+          "date": "2026-10-27T11:03:19Z",
+          "localizedDescription": "ZGTA V candidate 96 — multiplayer host capacity\n\nApplies Glue5's revised bounded host broadcast sizing to **iPhone and browser**: 7500-unit instances 2→3 and 4000-unit instances 4→6. Other host pools, existing player adjustments and larger custom counts are preserved. This excludes the superseded broad increase.\n\nDownloads\n- iPhone/iPad: update the existing ZGTA V app with the Build96 IPA or TIPA through compatible TrollStore. The app identity stays the same; keep the app and its data installed.\n- Browser: use the complete Mac/Linux, Windows or Android/Termux ZIP. Windows/Android physical testing remains pending.\n- Source, verification and SHA-256 sums are included. No game data is supplied.\n\nChecks\n- ARM64 Release compilation, strict ad-hoc signing, entitlements, IPA integrity and native-stage validation pass.\n- Build91 archive-access app sources remain intact. Icons, artwork, shaders, localization and all other packaged resources are byte-identical to91; only executable/build/signature metadata changes.\n- 13 focused config/parity/refusal/HTTP tests pass. All3 browser packages pass manifest/source/CRC checks and actual config/range reads.\n- Actual Chrome single-player QA lobby: character creation, world entry and direct reconnect pass. The final browser gameplay/runtime bytes match that smoke test; the later source change only aligns the native build number.\n- Browser retains the current95.1 desktop launcher and cache recovery.\n\n**Paired iPhone/browser gameplay and the small-job crash reproduction are still pending.** The owner chose to do that later. This is a test candidate, not a stable acceptance claim. Existing beta2 downloads, previous installers, game files and saves are preserved.\n\nUpstream reference: https://github.com/mempage4k/glue5/commit/5d761642efbb5d73dbc056dc04ffa0748df89b61\n\nSileo publication: installer **0.96-1** is available from Zema’s Repo, with matching Build96 IPA, package manifests and checksums. The signed index and installer pins are synchronized; physical Build96 installation and paired gameplay remain pending.",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.zemabinks.gtamp.enginelanlab-2.0-96/ZGTA-V-Build96-HostCapacity-TrollStore-duo.ipa",
+          "size": 90821484,
+          "sha256": "a2af24a6ff258ab6ab797553ad46dee145142459cf5a80123fc2b8aa0cbb07ad",
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "2.0",
+          "buildVersion": "91",
+          "date": "2026-10-26T19:30:00Z",
+          "localizedDescription": "ZGTA V 2.0 beta 2 — by zema\n\nSolo Story · Free Roam · Private Multiplayer — Join or Create.\n\nMac and Windows\n\nRun the extracted **Start ZGTA V** script once and choose your game folder. Setup creates a **ZGTA V desktop launcher**. Use that icon next time to start the local host and open the browser. Keep its Terminal/console window open while playing. Your game files stay in their existing folder.\n\nDownloads\n\n| Platform | File below |\n|---|---|\n| iPhone / iPad — **iOS 15.0+** | Build 91 `.ipa` or TrollStore `.tipa`; iOS app unchanged |\n| Sileo | TrollStore installer `.deb` for an existing compatible TrollStore setup; AppSync installer remains experimental |\n| Windows x64 | Build 93 Windows ZIP — alpha; actual Windows testing pending |\n| Mac / Linux | Build 93 Mac/Linux ZIP — Python 3.9+; Mac desktop entry supported, Linux uses the script |\n| Android | Build 93 Termux ZIP — experimental browser version, no APK |\n\n**Installation** · **iOS sideloading options** · **Mods, graphics & multiplayer** · **Remote play with Tailscale**\n\nYour own matching prepared game files are required; none are included. Current Tailscale requirements are separate from the iOS app minimum; check the remote-play guide before installing it.\n\nExisting iOS Build 91 users do not need another app update. Back up saves before updating. Browser users should keep the same browser profile and localhost address.\n\nBeta checks\n\n25 focused checks and all three extracted-package integrity/source/HTTP checks pass. The real Mac installed-copy/server workflow was exercised with a private test Desktop. Finder double-click, Windows shortcut execution and wider gameplay remain untested. See `VERIFICATION.json` and known limits.\n\nChecksums are in `SHA256SUMS.txt`. Previous releases remain available.",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.zemabinks.gtamp.enginelanlab-2.0-91/ZGTA-V-Build91-Archive-Access-TrollStore-duo.ipa",
+          "size": 90826137,
+          "sha256": "802fcab3cb95d10620ee404ca5823ccb55daa8419ff39f64a19ddab681dfda30",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.kernel.extended-virtual-addressing",
+          "com.apple.developer.kernel.increased-memory-limit"
+        ],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "Host or join ZGTA V multiplayer on your local network, and access your optional game-file server.",
+          "NSMicrophoneUsageDescription": "ZGTA V uses the microphone for optional in-game voice chat (Speaker & Mic)."
+        }
+      },
+      "version": "2.0",
+      "versionDate": "2026-11-01T15:46:29Z",
+      "versionDescription": "ZGTA 5 1.1 beta 1 — proximity voice\n\n**iOS 109 · Browser 109 · Mac DMG 109.1 · Sileo installer 1.1~beta1**\n\nWhat's new\n\n- **Proximity voice for private multiplayer:** talk between iPhone and browser players using the existing microphone and speaker buttons.\n- **Clearer distance audio:** voices are loud nearby, progressively quieter as players separate, and silent beyond 35 metres. Volume changes are smoothed while moving.\n- **Separate voice controls:** switch your microphone off or mute nearby voices while game audio stays separate. No separate multiplayer bridge interface is needed.\n- **Same private hosting:** voice uses your compatible Engine LAN relay over LAN or private Tailscale. No public voice service or new account is required.\n- **Keep your data:** update over the existing app and retain your game files, saves and settings. Do not delete the app to update.\n\nUpdating and limits\n\nThe owner confirmed Build 109 installation/data, actual iPhone/Mac speech both ways, smooth distance reduction, out-of-range silence/return and microphone mute. Distances in the owner listening check were estimated; automated native/browser PCM measurements check the actual curve.\n\nThe microphone starts off and requires permission. Browser capture needs a secure context, such as the local launcher address or HTTPS. Hiding the game tab pauses voice; enable it again when returning.\n\nMac 109.1 packages exactly the browser 109 payload tested on Mac. Its launcher sources and pinned runtimes are unchanged from 107.1; mounted hashes, signatures, bundled Intel Python and native-layout checks pass. The109.1 drag-install was not repeated. The Mac app is ad-hoc signed, not Apple-notarized.\n\nWindows/Android/Linux and Apple Silicon execution, AppSync installation, Bluetooth/interruption handling and simultaneous speakerphone echo remain unverified. Android is a Termux/browser package, not an APK. This voice release does not claim a new physical 3 GB iPhone performance benchmark.\n\nStable Sileo installer 1.1~beta1 uses the same tested Build 109 IPA as private 1.1~beta1. Its version, descriptions and public download pins differ; the installation method and app identity are preserved. That public metadata wrapper was not separately phone-tested. AppSync remains experimental for compatible ARM64 rootful devices, not RootHide/rootless.\n\nYour own compatible game files are required. No commercial game content is included. Install/update · Verification scope.\n\nNaming transition\n\nThis is the previously owner-tested beta4 payload, renamed **ZGTA 5 — 1.1 beta 1** at the owner’s request. Sileo package version is `1.1~beta1`. App/engine payloads are unchanged; internal Build109/109.1 and old artifact metadata remain valid provenance. The new browser design is a separate private candidate and is not included in this release.",
+      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.zemabinks.gtamp.enginelanlab-2.0-109/ZGTA-V-Build109-VoiceDistance-TrollStore-duo.ipa",
+      "size": 117655034,
+      "_repo": "zemabinks/ZGTA-V"
     }
   ],
   "news": []
