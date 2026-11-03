@@ -22,6 +22,15 @@
       "duoPatch": "auto",
       "overrides": {},
       "addedAt": "2026-10-29T06:41:56.351Z"
+    },
+    {
+      "repo": "zemabinks/ZGTA-V",
+      "assetPattern": "\\.ipa$",
+      "includePrereleases": true,
+      "maxVersions": 5,
+      "duoPatch": "auto",
+      "overrides": {},
+      "addedAt": "2026-11-03T23:40:07.642Z"
     }
   ]
 }
