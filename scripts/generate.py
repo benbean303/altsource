@@ -251,8 +251,8 @@ def build_app(entry, cache, force, base_url, warnings):
     for release, asset in candidates:
         key = asset_key(asset)
         meta = None if force else cache.get(key)
-        if meta and "sdkVersion" not in meta:
-            meta = None  # cached before SDK detection existed
+        if meta and ("sdkVersion" not in meta or "usesScenes" not in meta):
+            meta = None  # cached before SDK / scene detection existed
         icon_path = ICONS / f"{meta['bundleIdentifier']}.png" if meta else None
         if meta and not versions and meta.get("hasIcon") and not icon_path.exists():
             meta = None  # need the icon back, so re-read the ipa
@@ -295,7 +295,9 @@ def build_app(entry, cache, force, base_url, warnings):
             seen.add(version_key)
 
             # iPhone Duo: raise the SDK stamp of older builds, host the result.
-            wants_duo = duo_mode == "auto" and duo.needs_patch(meta.get("sdkVersion"))
+            # Not for apps without the UIScene life cycle: iOS kills apps
+            # "built with" the 27 SDK that lack it, so they'd crash at launch.
+            wants_duo = duo_mode == "auto" and duo.needs_patch(meta.get("sdkVersion")) and meta.get("usesScenes")
             if wants_duo and not meta.get("duo"):
                 if not PUBLISHER:
                     if not versions:
@@ -413,6 +415,8 @@ def duo_state(mode, meta):
         return "ready"
     if mode != "auto":
         return "off"
+    if not meta.get("usesScenes"):
+        return "unsupported"
     return "patched" if meta.get("duo") else "original"
 
 

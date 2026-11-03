@@ -6,6 +6,7 @@ const DUO_LABELS = {
   patched: ["ok", "Patched to fill the screen"],
   original: ["warn", "Letterboxed: patch pending, waiting for the next build"],
   off: ["warn", "Letterboxed: patching is turned off"],
+  unsupported: ["warn", "Letterboxed: can't be patched, because the app doesn't use the UIScene life cycle that iOS requires of SDK 27 apps"],
   unknown: ["warn", "Unknown: couldn't read the SDK version"],
 };
 

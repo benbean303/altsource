@@ -198,6 +198,14 @@ from source, `scripts/duo.py`:
    `duo-<bundle id>-<version>-<build>`, file `<name>-duo.ipa`) and points the
    source at it
 
+Apps that don't use the UIScene life cycle are left unpatched (shown as
+"can't be patched" in the web app). iOS requires the scene life cycle of every
+app built with the iOS 27 SDK and kills those without it at launch, and the
+patch makes an app look built with 27.1. An app counts as using scenes if
+its `Info.plist` has a `UIApplicationSceneManifest` with scene configurations,
+or a scene delegate (`scene:willConnectToSession:options:`) is implemented in
+its code or frameworks.
+
 Patching breaks the original code signature. That doesn't matter, because
 AltStore, SideStore and FlareStore re-sign apps before installing them.
 Apps built with a new enough SDK are served unchanged.

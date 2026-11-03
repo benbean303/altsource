@@ -42,6 +42,7 @@ def read_ipa(path):
 
         main_exe = info.get("CFBundleExecutable")
         sdk = sdk_version(zf.read(f"{app_dir}{main_exe}")) if main_exe and f"{app_dir}{main_exe}" in names else None
+        scenes = uses_scenes(zf, names, app_dir, info)
 
         entitlements = set()
         privacy = {}
@@ -63,10 +64,36 @@ def read_ipa(path):
             "buildVersion": str(info.get("CFBundleVersion") or info.get("CFBundleShortVersionString") or "0"),
             "minOSVersion": info.get("MinimumOSVersion"),
             "sdkVersion": sdk,
+            "usesScenes": scenes,
             "entitlements": sorted(entitlements - IMPLICIT_ENTITLEMENTS),
             "privacy": dict(sorted(privacy.items())),
             "icon": _icon_png(zf, names, app_dir, info),
         }
+
+
+MACHO_MAGICS = (b"\xcf\xfa\xed\xfe", b"\xce\xfa\xed\xfe", b"\xca\xfe\xba\xbe", b"\xca\xfe\xba\xbf")
+SCENE_DELEGATE_SELECTOR = b"scene:willConnectToSession:options:"
+
+
+def uses_scenes(zf, names, app_dir, info):
+    """Whether the app adopts the UIScene life cycle, which iOS requires of
+    apps built with the iOS 27 SDK (they're killed at launch otherwise).
+
+    Adopted = a scene manifest with scene configurations in Info.plist, or a
+    scene delegate implemented in code (in the app or one of its frameworks,
+    e.g. SDL, Unity or Flutter set scenes up programmatically)."""
+    manifest = info.get("UIApplicationSceneManifest")
+    if isinstance(manifest, dict) and manifest.get("UISceneConfigurations"):
+        return True
+    for name in names:
+        if not name.startswith(app_dir) or name.endswith("/") or zf.getinfo(name).file_size < 4096:
+            continue
+        with zf.open(name) as f:
+            if f.read(4) not in MACHO_MAGICS:
+                continue
+        if SCENE_DELEGATE_SELECTOR in zf.read(name):
+            return True
+    return False
 
 
 def _find_app_dir(names):
