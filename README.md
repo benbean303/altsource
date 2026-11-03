@@ -202,9 +202,13 @@ Apps that don't use the UIScene life cycle are left unpatched (shown as
 "can't be patched" in the web app). iOS requires the scene life cycle of every
 app built with the iOS 27 SDK and kills those without it at launch, and the
 patch makes an app look built with 27.1. An app counts as using scenes if
-its `Info.plist` has a `UIApplicationSceneManifest` with scene configurations,
-or a scene delegate (`scene:willConnectToSession:options:`) is implemented in
-its code or frameworks.
+any of these is true:
+
+- It was already built with SDK 27.0 or newer.
+- Its `Info.plist` has a `UIApplicationSceneManifest` with scene configurations.
+- Its code, frameworks or dylibs implement a scene delegate
+  (`scene:willConnectToSession:options:`).
+- It uses the SwiftUI app life cycle (`SwiftUI.App.main`).
 
 Patching breaks the original code signature. That doesn't matter, because
 AltStore, SideStore and FlareStore re-sign apps before installing them.

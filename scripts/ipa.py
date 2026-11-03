@@ -42,7 +42,7 @@ def read_ipa(path):
 
         main_exe = info.get("CFBundleExecutable")
         sdk = sdk_version(zf.read(f"{app_dir}{main_exe}")) if main_exe and f"{app_dir}{main_exe}" in names else None
-        scenes = uses_scenes(zf, names, app_dir, info)
+        scenes = uses_scenes(zf, names, app_dir, info, sdk)
 
         entitlements = set()
         privacy = {}
@@ -72,16 +72,23 @@ def read_ipa(path):
 
 
 MACHO_MAGICS = (b"\xcf\xfa\xed\xfe", b"\xce\xfa\xed\xfe", b"\xca\xfe\xba\xbe", b"\xca\xfe\xba\xbf")
-SCENE_DELEGATE_SELECTOR = b"scene:willConnectToSession:options:"
+SCENE_MARKERS = (
+    b"scene:willConnectToSession:options:",  # a UIKit scene delegate (incl. SDL, Unity, Flutter)
+    b"7SwiftUI3AppPAAE4mainyyFZ",  # SwiftUI.App.main(): the SwiftUI app life cycle, scene-based
+)
 
 
-def uses_scenes(zf, names, app_dir, info):
+def uses_scenes(zf, names, app_dir, info, sdk):
     """Whether the app adopts the UIScene life cycle, which iOS requires of
     apps built with the iOS 27 SDK (they're killed at launch otherwise).
 
-    Adopted = a scene manifest with scene configurations in Info.plist, or a
-    scene delegate implemented in code (in the app or one of its frameworks,
-    e.g. SDL, Unity or Flutter set scenes up programmatically)."""
+    Adopted = already built with SDK 27+ (it couldn't launch otherwise), a
+    scene manifest with scene configurations in Info.plist, or scenes set up
+    in code: a scene delegate or the SwiftUI app life cycle, in the app or
+    one of its frameworks / dylibs (e.g. Xcode debug builds keep the app's
+    code in <name>.debug.dylib)."""
+    if sdk and encode_version(sdk) >= encode_version("27.0"):
+        return True
     manifest = info.get("UIApplicationSceneManifest")
     if isinstance(manifest, dict) and manifest.get("UISceneConfigurations"):
         return True
@@ -91,7 +98,8 @@ def uses_scenes(zf, names, app_dir, info):
         with zf.open(name) as f:
             if f.read(4) not in MACHO_MAGICS:
                 continue
-        if SCENE_DELEGATE_SELECTOR in zf.read(name):
+        data = zf.read(name)
+        if any(marker in data for marker in SCENE_MARKERS):
             return True
     return False
 

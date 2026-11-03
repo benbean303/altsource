@@ -42,6 +42,7 @@ API = "https://api.github.com"
 CATEGORIES = {"developer", "entertainment", "games", "lifestyle", "other", "photo-video", "social", "utilities"}
 DEFAULT_PATTERN = r"\.ipa$"
 RELEASES_TO_SCAN = 30
+SCAN_VERSION = 2  # bump when ipa.read_ipa learns something new, to re-read cached .ipa files
 USER_AGENT = "altsource-generator"
 
 
@@ -251,8 +252,8 @@ def build_app(entry, cache, force, base_url, warnings):
     for release, asset in candidates:
         key = asset_key(asset)
         meta = None if force else cache.get(key)
-        if meta and ("sdkVersion" not in meta or "usesScenes" not in meta):
-            meta = None  # cached before SDK / scene detection existed
+        if meta and meta.get("scanVersion") != SCAN_VERSION:
+            meta = None  # read by an older version of ipa.py; read it again
         icon_path = ICONS / f"{meta['bundleIdentifier']}.png" if meta else None
         if meta and not versions and meta.get("hasIcon") and not icon_path.exists():
             meta = None  # need the icon back, so re-read the ipa
@@ -277,7 +278,7 @@ def build_app(entry, cache, force, base_url, warnings):
                     warnings.append(f"{release['tag_name']}: skipped, {e}")
                     continue
                 icon = info.pop("icon")
-                meta = {**info, "sha256": sha, "hasIcon": bool(icon)}
+                meta = {**info, "sha256": sha, "hasIcon": bool(icon), "scanVersion": SCAN_VERSION}
                 cache[key] = meta
                 if icon and not versions:
                     icon_png = icon
