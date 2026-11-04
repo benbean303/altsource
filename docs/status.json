@@ -25,7 +25,7 @@
       "iconURL": "https://benbean303.github.io/altsource/icons/com.kuschqin.madeira.steamui.png",
       "versions": 5,
       "sdkVersion": "27.0",
-      "duo": "unsupported",
+      "duo": "patched",
       "state": "ok",
       "messages": []
     },
