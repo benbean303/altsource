@@ -1,29 +1,4 @@
 {
-  "670507365:44711034:2026-10-23T21:49:12Z": {
-    "bundleIdentifier": "com.theboisclub.gen1recompplusplus",
-    "name": "gen1recomp++",
-    "version": "0.3.96",
-    "buildVersion": "396",
-    "minOSVersion": "15.0",
-    "sdkVersion": "26.2",
-    "usesScenes": true,
-    "entitlements": [
-      "com.apple.developer.healthkit",
-      "get-task-allow"
-    ],
-    "privacy": {
-      "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
-    },
-    "sha256": "3e76461bdc45bf210025e6a91d4326e479b765eb24a0389f3677f275334deb54",
-    "hasIcon": true,
-    "scanVersion": 2,
-    "duo": {
-      "tag": "duo-com.theboisclub.gen1recompplusplus-0.3.96-396",
-      "url": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.96-396/gen1recomp%2B%2B-0.3.96-ios-duo.ipa",
-      "size": 44710740,
-      "sha256": "cc73b61241075be217089f70804a5aa5d2dd2a88e824133a850385fd41fc761f"
-    }
-  },
   "676580849:166277351:2026-10-26T00:58:36Z": {
     "bundleIdentifier": "com.kuschqin.madeira.steamui",
     "name": "iDeck",
@@ -352,6 +327,31 @@
       "url": "https://github.com/benbean303/altsource/releases/download/duo-com.kuschqin.madeira.steamui-0.1.3-145/iDeck-0.1.3-alpha.6-build145-duo.ipa",
       "size": 174480716,
       "sha256": "b295b0f07d6b824c799035b49d1998729af975c8ad7af15e68b170544ac4a71c"
+    }
+  },
+  "718419302:44734536:2026-11-06T20:13:11Z": {
+    "bundleIdentifier": "com.theboisclub.gen1recompplusplus",
+    "name": "gen1recomp++",
+    "version": "0.4.1",
+    "buildVersion": "401",
+    "minOSVersion": "15.0",
+    "sdkVersion": "26.2",
+    "usesScenes": true,
+    "entitlements": [
+      "com.apple.developer.healthkit",
+      "get-task-allow"
+    ],
+    "privacy": {
+      "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
+    },
+    "sha256": "5de10fab829699f3037112783874cd855c15201519dce7ffcea66c66c5190f50",
+    "hasIcon": true,
+    "scanVersion": 2,
+    "duo": {
+      "tag": "duo-com.theboisclub.gen1recompplusplus-0.4.1-401",
+      "url": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.1-401/gen1recomp%2B%2B-0.4.1-ios-duo.ipa",
+      "size": 44732426,
+      "sha256": "35e12efbcc90a3b358bd87a2cd419c09ea59640afd9b0a387bc6b68b32bdd6a9"
     }
   }
 }

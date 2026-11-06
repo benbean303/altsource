@@ -24,6 +24,16 @@
       "screenshots": [],
       "versions": [
         {
+          "version": "0.4.1",
+          "buildVersion": "401",
+          "date": "2026-11-06T20:13:15Z",
+          "localizedDescription": "squashed some shiz tyvm iykyk\n\nIssues closed\n\n- #3099 Patch notes aren't working on switch\n- #3112 cartridge failing checksum prevening save exports???\n- #3113 Keep Update button Visible without scroll\n- #3116 bunch of emerald bugs, missing text and battle freeze\n- #3117 Poke flute gen 3 not working in battle\n- #3118 [Feature Request] Keyboard hotkeys to change game in the Launcher menu\n\nContributors\n\n- @bryanthaboi",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.1-401/gen1recomp%2B%2B-0.4.1-ios-duo.ipa",
+          "size": 44732426,
+          "sha256": "35e12efbcc90a3b358bd87a2cd419c09ea59640afd9b0a387bc6b68b32bdd6a9",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.4.0",
           "buildVersion": "400",
           "date": "2026-11-02T20:00:59Z",
@@ -62,16 +72,6 @@
           "size": 44713228,
           "sha256": "18c72024bcfa2d3f92518fb6a40e9cf8a3353307c48501d03254dc9595941f90",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "0.3.96",
-          "buildVersion": "396",
-          "date": "2026-10-23T21:49:15Z",
-          "localizedDescription": "honestly RIP zaboomafoo we will never forget u\n\nIssues closed\n\n- #3036 Gen2: a mod can't add a phone contact\n- #3037 Mods can't change Gen2 shops (no registry for data.gen2Marts)\n- #3038 Gen 2: new species and items get no script number (index capped at 255, never assigned)\n- #3040 FRLG: Hoenn species + Celebi play the wrong cries\n- #3042 Goldenrod game corner card game bugs\n- #3043 Emerald Isn't Available on Switch\n- #3046 (Modding API) mod.options:define doesn't work anymore\n\nContributors\n\n- @bryanthaboi\n- @Nexhas28\n- @poooooby",
-          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.96-396/gen1recomp%2B%2B-0.3.96-ios-duo.ipa",
-          "size": 44710740,
-          "sha256": "cc73b61241075be217089f70804a5aa5d2dd2a88e824133a850385fd41fc761f",
-          "minOSVersion": "15.0"
         }
       ],
       "appPermissions": {
@@ -83,11 +83,11 @@
           "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
         }
       },
-      "version": "0.4.0",
-      "versionDate": "2026-11-02T20:00:59Z",
-      "versionDescription": "bugs and some switch stuff\n\nIssues closed\n\n- #3083 Whitescreen on Trendy Phrase/Gabbys Interview screen\n- #3088 Scrolling issues on iOS\n- #3089 Missing phone jingle\n- #3090 Gen2 Bug-Catching Contest ignores the encounters registry\n- #3091 Gold: script.command's ctx.mapId is never the map label\n- #3092 Gen 2: mods can't add Fly destinations\n- #3094 Pokeball catching animation is skipping CRYSTAL\n- #3096 Asking to press button while trainer send pokemon\n- #3097 Shaders cant be downloaded on switch\n- #3098 No dynamic option UI on crystal\n\nContributors\n\n- @booshankles\n- @bryanthaboi",
-      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.0-400/gen1recomp%2B%2B-0.4.0-ios-duo.ipa",
-      "size": 44725831,
+      "version": "0.4.1",
+      "versionDate": "2026-11-06T20:13:15Z",
+      "versionDescription": "squashed some shiz tyvm iykyk\n\nIssues closed\n\n- #3099 Patch notes aren't working on switch\n- #3112 cartridge failing checksum prevening save exports???\n- #3113 Keep Update button Visible without scroll\n- #3116 bunch of emerald bugs, missing text and battle freeze\n- #3117 Poke flute gen 3 not working in battle\n- #3118 [Feature Request] Keyboard hotkeys to change game in the Launcher menu\n\nContributors\n\n- @bryanthaboi",
+      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.1-401/gen1recomp%2B%2B-0.4.1-ios-duo.ipa",
+      "size": 44732426,
       "_repo": "bryanthaboi/gen1recomp"
     },
     {
