@@ -24,6 +24,16 @@
       "screenshots": [],
       "versions": [
         {
+          "version": "0.4.2",
+          "buildVersion": "402",
+          "date": "2026-11-08T02:20:09Z",
+          "localizedDescription": "fox me silly\n\nContributors\n\n- @AverageConsumer\n- @bryanthaboi\n- @Nexhas28",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.2-402/gen1recomp%2B%2B-0.4.2-ios-duo.ipa",
+          "size": 44737610,
+          "sha256": "da78c988e1f3c30340cd9ebc897fe1862fabf1e3bc81ab018313f0961ef95bf4",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.4.1",
           "buildVersion": "401",
           "date": "2026-11-06T20:13:15Z",
@@ -62,16 +72,6 @@
           "size": 44720030,
           "sha256": "7529afee79821886e581a9a90aeb711529e4ccd6f4d114f4183cca4532f38fff",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "0.3.97",
-          "buildVersion": "397",
-          "date": "2026-10-26T16:42:12Z",
-          "localizedDescription": "… CLOSES #3059, CLOSES #3061, CLOSES #3062\n\nIssues closed\n\n- #3048 emerald data gets imported twice on portable installation\n- #3049 (Modding API v3) battleScaleBack causes error in gen2 games\n- #3055 mod.datasets:open(\"crystal\") rejects Crystal's pokemon data over its tutorMoves table\n- #3057 Mod update fails with \"string length overflow\" when baseroms/ holds a ~2 GiB import\n- #3058 mod.datasets: Gen 2's fishing art (menu_gfx emotes) can't be reached\n- #3059 Oak music in Gold starts too early\n- #3061 CD icons for Dark TMs in the TM Case are invisible.\n- #3062 Event Pokemon are missing the \"Fateful Encounter\" flag\n\nContributors\n\n- @bryanthaboi",
-          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.97-397/gen1recomp%2B%2B-0.3.97-ios-duo.ipa",
-          "size": 44713228,
-          "sha256": "18c72024bcfa2d3f92518fb6a40e9cf8a3353307c48501d03254dc9595941f90",
-          "minOSVersion": "15.0"
         }
       ],
       "appPermissions": {
@@ -83,11 +83,11 @@
           "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
         }
       },
-      "version": "0.4.1",
-      "versionDate": "2026-11-06T20:13:15Z",
-      "versionDescription": "squashed some shiz tyvm iykyk\n\nIssues closed\n\n- #3099 Patch notes aren't working on switch\n- #3112 cartridge failing checksum prevening save exports???\n- #3113 Keep Update button Visible without scroll\n- #3116 bunch of emerald bugs, missing text and battle freeze\n- #3117 Poke flute gen 3 not working in battle\n- #3118 [Feature Request] Keyboard hotkeys to change game in the Launcher menu\n\nContributors\n\n- @bryanthaboi",
-      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.1-401/gen1recomp%2B%2B-0.4.1-ios-duo.ipa",
-      "size": 44732426,
+      "version": "0.4.2",
+      "versionDate": "2026-11-08T02:20:09Z",
+      "versionDescription": "fox me silly\n\nContributors\n\n- @AverageConsumer\n- @bryanthaboi\n- @Nexhas28",
+      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.2-402/gen1recomp%2B%2B-0.4.2-ios-duo.ipa",
+      "size": 44737610,
       "_repo": "bryanthaboi/gen1recomp"
     },
     {
