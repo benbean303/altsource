@@ -24,6 +24,16 @@
       "screenshots": [],
       "versions": [
         {
+          "version": "0.4.4",
+          "buildVersion": "404",
+          "date": "2026-11-12T19:08:46Z",
+          "localizedDescription": "Bingo\n\nIssues closed\n\n- #3132 [GB audio] Emulation bugs\n- #3133 A nickname on a trainer.party row shows in Gold, Silver and Crystal but is dropped in Red, Blue, Yellow and the Gen 3 games\n- #3134 Opponent held items fail\n\nContributors\n\n- @bryanthaboi\n- @Nexhas28",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.4-404/gen1recomp%2B%2B-0.4.4-ios-duo.ipa",
+          "size": 44748151,
+          "sha256": "808572daf5b70203f304622c8c1e510b1e0f6bd96fb80e6534424ae1e7380a60",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.4.3",
           "buildVersion": "403",
           "date": "2026-11-11T21:46:02Z",
@@ -62,16 +72,6 @@
           "size": 44725831,
           "sha256": "e8cfda87cbf17c7d7af8cc3ec9667aa9c5913b305b6894242923e88f33cfd98d",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "0.3.99",
-          "buildVersion": "399",
-          "date": "2026-10-31T23:14:46Z",
-          "localizedDescription": "JdsjziziakakLLl\n\nContributors\n\n- @bryanthaboi",
-          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.3.99-399/gen1recomp%2B%2B-0.3.99-ios-duo.ipa",
-          "size": 44720552,
-          "sha256": "d72be035ee16c3921a9415a3a95e1e14ba11f9cb1c46464005f03905d952d305",
-          "minOSVersion": "15.0"
         }
       ],
       "appPermissions": {
@@ -83,11 +83,11 @@
           "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
         }
       },
-      "version": "0.4.3",
-      "versionDate": "2026-11-11T21:46:02Z",
-      "versionDescription": "Download the right version for your device below.\n\nIssues closed\n\n- #3121 Mod API 3 returns broken mon with fieldmove.eligibility\n- #3122 Gen 3: a mod can't change which metatiles a map shows\n- #3124 [Red/Android/0.4.1] Professor Oak missing after Champion\n- #3126 Quest Log recap doesn’t draw the surf blob or the Fly bird\n- #3127 Pokemon emerald wild encounter transition\n- #3128 catch.nickname never fires in Gen 2 or Gen 3, so mods can't answer the nickname question after a catch\n\nContributors\n\n- @bryanthaboi",
-      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.3-403/gen1recomp%2B%2B-0.4.3-ios-duo.ipa",
-      "size": 44744969,
+      "version": "0.4.4",
+      "versionDate": "2026-11-12T19:08:46Z",
+      "versionDescription": "Bingo\n\nIssues closed\n\n- #3132 [GB audio] Emulation bugs\n- #3133 A nickname on a trainer.party row shows in Gold, Silver and Crystal but is dropped in Red, Blue, Yellow and the Gen 3 games\n- #3134 Opponent held items fail\n\nContributors\n\n- @bryanthaboi\n- @Nexhas28",
+      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.4-404/gen1recomp%2B%2B-0.4.4-ios-duo.ipa",
+      "size": 44748151,
       "_repo": "bryanthaboi/gen1recomp"
     },
     {
