@@ -24,6 +24,16 @@
       "screenshots": [],
       "versions": [
         {
+          "version": "0.4.5",
+          "buildVersion": "405",
+          "date": "2026-11-14T10:13:59Z",
+          "localizedDescription": "Download the right version for your device below.\n\nIssues closed\n\n- #3138 Battle Bag in Battle Pyramid doesn't work in Battle\n- #3139 when using a controller and navigating though menus and such, sometimes when navigating through them, one dpad click or joystick move move through two options instead of one and skip one of them, and its very annoying.\n- #3140 Gift Castform in Gen 3 isn't holding the Mystic Water like it should\n\nContributors\n\n- @bryanthaboi",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.5-405/gen1recomp%2B%2B-0.4.5-ios-duo.ipa",
+          "size": 44741745,
+          "sha256": "6a34932b3155a3942359287902892e27e4185737deaf3582cb099a552ab3908e",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.4.4",
           "buildVersion": "404",
           "date": "2026-11-12T19:08:46Z",
@@ -62,16 +72,6 @@
           "size": 44732426,
           "sha256": "35e12efbcc90a3b358bd87a2cd419c09ea59640afd9b0a387bc6b68b32bdd6a9",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "0.4.0",
-          "buildVersion": "400",
-          "date": "2026-11-02T20:00:59Z",
-          "localizedDescription": "bugs and some switch stuff\n\nIssues closed\n\n- #3083 Whitescreen on Trendy Phrase/Gabbys Interview screen\n- #3088 Scrolling issues on iOS\n- #3089 Missing phone jingle\n- #3090 Gen2 Bug-Catching Contest ignores the encounters registry\n- #3091 Gold: script.command's ctx.mapId is never the map label\n- #3092 Gen 2: mods can't add Fly destinations\n- #3094 Pokeball catching animation is skipping CRYSTAL\n- #3096 Asking to press button while trainer send pokemon\n- #3097 Shaders cant be downloaded on switch\n- #3098 No dynamic option UI on crystal\n\nContributors\n\n- @booshankles\n- @bryanthaboi",
-          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.0-400/gen1recomp%2B%2B-0.4.0-ios-duo.ipa",
-          "size": 44725831,
-          "sha256": "e8cfda87cbf17c7d7af8cc3ec9667aa9c5913b305b6894242923e88f33cfd98d",
-          "minOSVersion": "15.0"
         }
       ],
       "appPermissions": {
@@ -83,11 +83,11 @@
           "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
         }
       },
-      "version": "0.4.4",
-      "versionDate": "2026-11-12T19:08:46Z",
-      "versionDescription": "Bingo\n\nIssues closed\n\n- #3132 [GB audio] Emulation bugs\n- #3133 A nickname on a trainer.party row shows in Gold, Silver and Crystal but is dropped in Red, Blue, Yellow and the Gen 3 games\n- #3134 Opponent held items fail\n\nContributors\n\n- @bryanthaboi\n- @Nexhas28",
-      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.4-404/gen1recomp%2B%2B-0.4.4-ios-duo.ipa",
-      "size": 44748151,
+      "version": "0.4.5",
+      "versionDate": "2026-11-14T10:13:59Z",
+      "versionDescription": "Download the right version for your device below.\n\nIssues closed\n\n- #3138 Battle Bag in Battle Pyramid doesn't work in Battle\n- #3139 when using a controller and navigating though menus and such, sometimes when navigating through them, one dpad click or joystick move move through two options instead of one and skip one of them, and its very annoying.\n- #3140 Gift Castform in Gen 3 isn't holding the Mystic Water like it should\n\nContributors\n\n- @bryanthaboi",
+      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.5-405/gen1recomp%2B%2B-0.4.5-ios-duo.ipa",
+      "size": 44741745,
       "_repo": "bryanthaboi/gen1recomp"
     },
     {

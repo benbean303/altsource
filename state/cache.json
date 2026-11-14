@@ -177,31 +177,6 @@
     "hasIcon": true,
     "scanVersion": 2
   },
-  "703006310:44727368:2026-11-02T20:00:28Z": {
-    "bundleIdentifier": "com.theboisclub.gen1recompplusplus",
-    "name": "gen1recomp++",
-    "version": "0.4.0",
-    "buildVersion": "400",
-    "minOSVersion": "15.0",
-    "sdkVersion": "26.2",
-    "usesScenes": true,
-    "entitlements": [
-      "com.apple.developer.healthkit",
-      "get-task-allow"
-    ],
-    "privacy": {
-      "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
-    },
-    "sha256": "d5b7986bd0400902ca4a9bf0e9135f0b3136b8143c7ee89a04c66ff02a9d2112",
-    "hasIcon": true,
-    "scanVersion": 2,
-    "duo": {
-      "tag": "duo-com.theboisclub.gen1recompplusplus-0.4.0-400",
-      "url": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.0-400/gen1recomp%2B%2B-0.4.0-ios-duo.ipa",
-      "size": 44725831,
-      "sha256": "e8cfda87cbf17c7d7af8cc3ec9667aa9c5913b305b6894242923e88f33cfd98d"
-    }
-  },
   "704333335:166398909:2026-11-03T04:49:22Z": {
     "bundleIdentifier": "com.kuschqin.madeira.steamui",
     "name": "iDeck",
@@ -352,6 +327,31 @@
       "url": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.4-404/gen1recomp%2B%2B-0.4.4-ios-duo.ipa",
       "size": 44748151,
       "sha256": "808572daf5b70203f304622c8c1e510b1e0f6bd96fb80e6534424ae1e7380a60"
+    }
+  },
+  "747088093:44742127:2026-11-14T10:13:55Z": {
+    "bundleIdentifier": "com.theboisclub.gen1recompplusplus",
+    "name": "gen1recomp++",
+    "version": "0.4.5",
+    "buildVersion": "405",
+    "minOSVersion": "15.0",
+    "sdkVersion": "26.2",
+    "usesScenes": true,
+    "entitlements": [
+      "com.apple.developer.healthkit",
+      "get-task-allow"
+    ],
+    "privacy": {
+      "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
+    },
+    "sha256": "5f583c5af4bca163b0d15acb7d9778674542ed4dcfc3bdbc5b183d7c63f43d3d",
+    "hasIcon": true,
+    "scanVersion": 2,
+    "duo": {
+      "tag": "duo-com.theboisclub.gen1recompplusplus-0.4.5-405",
+      "url": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.5-405/gen1recomp%2B%2B-0.4.5-ios-duo.ipa",
+      "size": 44741745,
+      "sha256": "6a34932b3155a3942359287902892e27e4185737deaf3582cb099a552ab3908e"
     }
   }
 }
