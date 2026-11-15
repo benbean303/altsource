@@ -24,6 +24,16 @@
       "screenshots": [],
       "versions": [
         {
+          "version": "0.4.6",
+          "buildVersion": "406",
+          "date": "2026-11-15T12:36:48Z",
+          "localizedDescription": "ripped out hand typed rom text and fallbacks, fixed crystal engine flags, odd egg ids, frlg mail, quest log, link names and transitions\n\nContributors\n\n- @bryanthaboi",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.6-406/gen1recomp%2B%2B-0.4.6-ios-duo.ipa",
+          "size": 44804473,
+          "sha256": "2572550cbf01730c8406f1ac61069d9dadee039bca76a9402bd768ff0eed741a",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.4.5",
           "buildVersion": "405",
           "date": "2026-11-14T10:13:59Z",
@@ -62,16 +72,6 @@
           "size": 44737610,
           "sha256": "da78c988e1f3c30340cd9ebc897fe1862fabf1e3bc81ab018313f0961ef95bf4",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "0.4.1",
-          "buildVersion": "401",
-          "date": "2026-11-06T20:13:15Z",
-          "localizedDescription": "squashed some shiz tyvm iykyk\n\nIssues closed\n\n- #3099 Patch notes aren't working on switch\n- #3112 cartridge failing checksum prevening save exports???\n- #3113 Keep Update button Visible without scroll\n- #3116 bunch of emerald bugs, missing text and battle freeze\n- #3117 Poke flute gen 3 not working in battle\n- #3118 [Feature Request] Keyboard hotkeys to change game in the Launcher menu\n\nContributors\n\n- @bryanthaboi",
-          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.1-401/gen1recomp%2B%2B-0.4.1-ios-duo.ipa",
-          "size": 44732426,
-          "sha256": "35e12efbcc90a3b358bd87a2cd419c09ea59640afd9b0a387bc6b68b32bdd6a9",
-          "minOSVersion": "15.0"
         }
       ],
       "appPermissions": {
@@ -83,11 +83,11 @@
           "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
         }
       },
-      "version": "0.4.5",
-      "versionDate": "2026-11-14T10:13:59Z",
-      "versionDescription": "Download the right version for your device below.\n\nIssues closed\n\n- #3138 Battle Bag in Battle Pyramid doesn't work in Battle\n- #3139 when using a controller and navigating though menus and such, sometimes when navigating through them, one dpad click or joystick move move through two options instead of one and skip one of them, and its very annoying.\n- #3140 Gift Castform in Gen 3 isn't holding the Mystic Water like it should\n\nContributors\n\n- @bryanthaboi",
-      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.5-405/gen1recomp%2B%2B-0.4.5-ios-duo.ipa",
-      "size": 44741745,
+      "version": "0.4.6",
+      "versionDate": "2026-11-15T12:36:48Z",
+      "versionDescription": "ripped out hand typed rom text and fallbacks, fixed crystal engine flags, odd egg ids, frlg mail, quest log, link names and transitions\n\nContributors\n\n- @bryanthaboi",
+      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.6-406/gen1recomp%2B%2B-0.4.6-ios-duo.ipa",
+      "size": 44804473,
       "_repo": "bryanthaboi/gen1recomp"
     },
     {
