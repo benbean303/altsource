@@ -229,31 +229,6 @@
       "sha256": "b295b0f07d6b824c799035b49d1998729af975c8ad7af15e68b170544ac4a71c"
     }
   },
-  "722620165:44739710:2026-11-08T02:20:05Z": {
-    "bundleIdentifier": "com.theboisclub.gen1recompplusplus",
-    "name": "gen1recomp++",
-    "version": "0.4.2",
-    "buildVersion": "402",
-    "minOSVersion": "15.0",
-    "sdkVersion": "26.2",
-    "usesScenes": true,
-    "entitlements": [
-      "com.apple.developer.healthkit",
-      "get-task-allow"
-    ],
-    "privacy": {
-      "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
-    },
-    "sha256": "e325edc8f6456c846ab8261bafeb80ad290bc33851fa91f3021465b6e279945f",
-    "hasIcon": true,
-    "scanVersion": 2,
-    "duo": {
-      "tag": "duo-com.theboisclub.gen1recompplusplus-0.4.2-402",
-      "url": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.2-402/gen1recomp%2B%2B-0.4.2-ios-duo.ipa",
-      "size": 44737610,
-      "sha256": "da78c988e1f3c30340cd9ebc897fe1862fabf1e3bc81ab018313f0961ef95bf4"
-    }
-  },
   "737016361:44747096:2026-11-11T21:45:58Z": {
     "bundleIdentifier": "com.theboisclub.gen1recompplusplus",
     "name": "gen1recomp++",
@@ -352,6 +327,31 @@
       "url": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.6-406/gen1recomp%2B%2B-0.4.6-ios-duo.ipa",
       "size": 44804473,
       "sha256": "2572550cbf01730c8406f1ac61069d9dadee039bca76a9402bd768ff0eed741a"
+    }
+  },
+  "752507453:44801142:2026-11-15T22:08:47Z": {
+    "bundleIdentifier": "com.theboisclub.gen1recompplusplus",
+    "name": "gen1recomp++",
+    "version": "0.4.7",
+    "buildVersion": "407",
+    "minOSVersion": "15.0",
+    "sdkVersion": "26.2",
+    "usesScenes": true,
+    "entitlements": [
+      "com.apple.developer.healthkit",
+      "get-task-allow"
+    ],
+    "privacy": {
+      "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
+    },
+    "sha256": "43d6701c757a5fb0c59eb7da21e3804603f84953941de1b20ea9f397b1a7c52e",
+    "hasIcon": true,
+    "scanVersion": 2,
+    "duo": {
+      "tag": "duo-com.theboisclub.gen1recompplusplus-0.4.7-407",
+      "url": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.7-407/gen1recomp%2B%2B-0.4.7-ios-duo.ipa",
+      "size": 44801122,
+      "sha256": "f15a9e8eb779d34dc642f7b3ed1135d5104d792724f9e9302bb1ad0c829e7d21"
     }
   }
 }

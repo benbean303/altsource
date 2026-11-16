@@ -24,6 +24,16 @@
       "screenshots": [],
       "versions": [
         {
+          "version": "0.4.7",
+          "buildVersion": "407",
+          "date": "2026-11-15T22:08:51Z",
+          "localizedDescription": "fixes gen 2 mods that reach into engine internals dying on boot since 0.4.6 (engine flags werent bound before game.ready)\n\nheads up mod authors, 0.4.6 moved a bunch of gen 2 stuff onto the cache so if ur mod pokes at engine internals u may need to update:\n- gen 2 engine flags are names now, read from the cache. src.core.gen2.FlagNames is gone, use src.core.gen2.FlagIds.events(constants) instead\n- gen 2 ui text, landmarks and swarm data are required cache reads now, theres no hand typed fallback anymore\n- if ur mod tests build a fake game.data u need to feed it real rom_text, text, landmarks and encounters or those screens will throw\n\nContributors\n\n- @bryanthaboi",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.7-407/gen1recomp%2B%2B-0.4.7-ios-duo.ipa",
+          "size": 44801122,
+          "sha256": "f15a9e8eb779d34dc642f7b3ed1135d5104d792724f9e9302bb1ad0c829e7d21",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.4.6",
           "buildVersion": "406",
           "date": "2026-11-15T12:36:48Z",
@@ -62,16 +72,6 @@
           "size": 44744969,
           "sha256": "2babd529c89ad33c96845952979dfadc59997facbf361311a253fc7d19255efc",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "0.4.2",
-          "buildVersion": "402",
-          "date": "2026-11-08T02:20:09Z",
-          "localizedDescription": "fox me silly\n\nContributors\n\n- @AverageConsumer\n- @bryanthaboi\n- @Nexhas28",
-          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.2-402/gen1recomp%2B%2B-0.4.2-ios-duo.ipa",
-          "size": 44737610,
-          "sha256": "da78c988e1f3c30340cd9ebc897fe1862fabf1e3bc81ab018313f0961ef95bf4",
-          "minOSVersion": "15.0"
         }
       ],
       "appPermissions": {
@@ -83,11 +83,11 @@
           "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
         }
       },
-      "version": "0.4.6",
-      "versionDate": "2026-11-15T12:36:48Z",
-      "versionDescription": "ripped out hand typed rom text and fallbacks, fixed crystal engine flags, odd egg ids, frlg mail, quest log, link names and transitions\n\nContributors\n\n- @bryanthaboi",
-      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.6-406/gen1recomp%2B%2B-0.4.6-ios-duo.ipa",
-      "size": 44804473,
+      "version": "0.4.7",
+      "versionDate": "2026-11-15T22:08:51Z",
+      "versionDescription": "fixes gen 2 mods that reach into engine internals dying on boot since 0.4.6 (engine flags werent bound before game.ready)\n\nheads up mod authors, 0.4.6 moved a bunch of gen 2 stuff onto the cache so if ur mod pokes at engine internals u may need to update:\n- gen 2 engine flags are names now, read from the cache. src.core.gen2.FlagNames is gone, use src.core.gen2.FlagIds.events(constants) instead\n- gen 2 ui text, landmarks and swarm data are required cache reads now, theres no hand typed fallback anymore\n- if ur mod tests build a fake game.data u need to feed it real rom_text, text, landmarks and encounters or those screens will throw\n\nContributors\n\n- @bryanthaboi",
+      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.7-407/gen1recomp%2B%2B-0.4.7-ios-duo.ipa",
+      "size": 44801122,
       "_repo": "bryanthaboi/gen1recomp"
     },
     {
