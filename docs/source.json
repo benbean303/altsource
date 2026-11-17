@@ -24,6 +24,16 @@
       "screenshots": [],
       "versions": [
         {
+          "version": "0.4.8",
+          "buildVersion": "408",
+          "date": "2026-11-17T01:16:00Z",
+          "localizedDescription": "Added recomp launcher support and some other junk type stuff\n\nIssues closed\n\n- #887 MacOS Closing game just keeps reopening\n- #960 Missing sounds for logging off & walking into NPCs\n- #1151 [Gold] Following up of #1127\n- #1153 Battle hooks can't gate whether an action happens at all\n- #1154 Red rom not installing.\n- #1188 GoldenRod tower softlock\n\nContributors\n\n- @bryanthaboi\n- @Xarishark",
+          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.8-408/gen1recomp%2B%2B-0.4.8-ios-duo.ipa",
+          "size": 44801782,
+          "sha256": "43b4100ce2f4c824e620d3bb80b2865f3726851aa1f3b2cb4671ccebab45e02b",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.4.7",
           "buildVersion": "407",
           "date": "2026-11-15T22:08:51Z",
@@ -62,16 +72,6 @@
           "size": 44748151,
           "sha256": "808572daf5b70203f304622c8c1e510b1e0f6bd96fb80e6534424ae1e7380a60",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "0.4.3",
-          "buildVersion": "403",
-          "date": "2026-11-11T21:46:02Z",
-          "localizedDescription": "Download the right version for your device below.\n\nIssues closed\n\n- #3121 Mod API 3 returns broken mon with fieldmove.eligibility\n- #3122 Gen 3: a mod can't change which metatiles a map shows\n- #3124 [Red/Android/0.4.1] Professor Oak missing after Champion\n- #3126 Quest Log recap doesn’t draw the surf blob or the Fly bird\n- #3127 Pokemon emerald wild encounter transition\n- #3128 catch.nickname never fires in Gen 2 or Gen 3, so mods can't answer the nickname question after a catch\n\nContributors\n\n- @bryanthaboi",
-          "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.3-403/gen1recomp%2B%2B-0.4.3-ios-duo.ipa",
-          "size": 44744969,
-          "sha256": "2babd529c89ad33c96845952979dfadc59997facbf361311a253fc7d19255efc",
-          "minOSVersion": "15.0"
         }
       ],
       "appPermissions": {
@@ -83,11 +83,11 @@
           "NSHealthShareUsageDescription": "The Pokéwalker mod reads your step count to give your Pokémon party experience points for real-world walking."
         }
       },
-      "version": "0.4.7",
-      "versionDate": "2026-11-15T22:08:51Z",
-      "versionDescription": "fixes gen 2 mods that reach into engine internals dying on boot since 0.4.6 (engine flags werent bound before game.ready)\n\nheads up mod authors, 0.4.6 moved a bunch of gen 2 stuff onto the cache so if ur mod pokes at engine internals u may need to update:\n- gen 2 engine flags are names now, read from the cache. src.core.gen2.FlagNames is gone, use src.core.gen2.FlagIds.events(constants) instead\n- gen 2 ui text, landmarks and swarm data are required cache reads now, theres no hand typed fallback anymore\n- if ur mod tests build a fake game.data u need to feed it real rom_text, text, landmarks and encounters or those screens will throw\n\nContributors\n\n- @bryanthaboi",
-      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.7-407/gen1recomp%2B%2B-0.4.7-ios-duo.ipa",
-      "size": 44801122,
+      "version": "0.4.8",
+      "versionDate": "2026-11-17T01:16:00Z",
+      "versionDescription": "Added recomp launcher support and some other junk type stuff\n\nIssues closed\n\n- #887 MacOS Closing game just keeps reopening\n- #960 Missing sounds for logging off & walking into NPCs\n- #1151 [Gold] Following up of #1127\n- #1153 Battle hooks can't gate whether an action happens at all\n- #1154 Red rom not installing.\n- #1188 GoldenRod tower softlock\n\nContributors\n\n- @bryanthaboi\n- @Xarishark",
+      "downloadURL": "https://github.com/benbean303/altsource/releases/download/duo-com.theboisclub.gen1recompplusplus-0.4.8-408/gen1recomp%2B%2B-0.4.8-ios-duo.ipa",
+      "size": 44801782,
       "_repo": "bryanthaboi/gen1recomp"
     },
     {
